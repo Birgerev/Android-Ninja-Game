@@ -217,6 +217,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pixelSize: 0.0625
+  doGravity: 1
+  gravityScale: 0.08
+  grounded: 0
+  groundLevel: -4
+  velocity: {x: 0, y: 0}
+  velocitySpeed: 0.04
+  position: {x: 0, y: 0, z: 0}
+  velocityDropoff: 0.97
+  xDropoff: 0.85
 --- !u!61 &994759305
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -276,7 +285,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d769d5b57e87a5a43af314b9b0edb7e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -294,7 +303,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994759303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.98, z: 0}
+  m_LocalPosition: {x: 0, y: -1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -527,6 +536,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pixelSize: 0.0625
+  doGravity: 0
+  gravityScale: 0.0125
+  grounded: 0
+  groundLevel: -4
+  velocity: {x: 0, y: 0}
+  velocitySpeed: 0
+  position: {x: 0, y: 0, z: 0}
+  velocityDropoff: 0.05
+  xDropoff: 0.9
 --- !u!212 &1559411997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -581,6 +599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1789016426}
   - component: {fileID: 1789016425}
+  - component: {fileID: 1789016427}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -599,6 +618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ddcc883f678a44dbf0e4ae7b3ff5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LockFpsSecure: 0
+  target: 30
 --- !u!4 &1789016426
 Transform:
   m_ObjectHideFlags: 0
@@ -612,6 +633,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1789016427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1789016424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7f78f6e45698a479c334be2d803a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1863116579
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +673,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pixelSize: 0.0625
+  doGravity: 0
+  gravityScale: 0.0125
+  grounded: 0
+  groundLevel: -4
+  velocity: {x: 0, y: 0}
+  velocitySpeed: 0
+  position: {x: 0, y: 0, z: 0}
+  velocityDropoff: 0.05
+  xDropoff: 0.9
 --- !u!212 &1863116581
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -841,6 +882,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pixelSize: 0.0625
+  doGravity: 0
+  gravityScale: 0.0125
+  grounded: 0
+  groundLevel: -4
+  velocity: {x: 0, y: 0}
+  velocitySpeed: 0
+  position: {x: 0, y: 0, z: 0}
+  velocityDropoff: 0.05
+  xDropoff: 0.9
 --- !u!212 &2005297128
 SpriteRenderer:
   m_ObjectHideFlags: 0
