@@ -225,7 +225,7 @@ MonoBehaviour:
   velocitySpeed: 0.04
   position: {x: 0, y: 0, z: 0}
   velocityDropoff: 0.97
-  xDropoff: 0.85
+  xDropoff: 0.75
 --- !u!61 &994759305
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -321,6 +321,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1789016425}
+  physics: {fileID: 0}
+  jumpForce: 0.75
+  jumpTimeInAir: 0.5
+  dashForce: 0.5
 --- !u!1 &1020424094
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ddcc883f678a44dbf0e4ae7b3ff5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LockFpsSecure: 0
+  LockFpsSecure: 1
   target: 30
 --- !u!4 &1789016426
 Transform:
