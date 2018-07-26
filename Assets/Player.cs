@@ -6,11 +6,16 @@ public class Player : MonoBehaviour {
 
     public Manager manager;
     public RigidbodyPixel physics;
+    public GameObject weapon;
 
     public float jumpForce = 0.75f;
     public float jumpTimeInAir = 1f;
 
     public float dashForce = 0.25f;
+
+    bool scheduledThrow = false; //waits for player to land on ground or for gravity to turn off before using weapon
+    Vector2 scheduledThrowDirection = Vector2.zero;
+
 
     void Start () {
         physics = transform.GetComponent<RigidbodyPixel>();
@@ -18,6 +23,9 @@ public class Player : MonoBehaviour {
     }
 	
 	void Update () {
+        if (scheduledThrow)
+            Throw(scheduledThrowDirection);
+
         Controls();
 	}
 
@@ -63,7 +71,26 @@ public class Player : MonoBehaviour {
 
     public void Throw(Vector2 dir)
     {
+        if (physics.grounded || !physics.doGravity)
+        {
+            Vector3 spawner = transform.Find((dir.x == 1) ? "right" : "left").transform.position;
 
+            GameObject obj = Instantiate(weapon);
+            obj.transform.position = spawner;
+
+            RigidbodyPixel rb = obj.GetComponent<RigidbodyPixel>();
+            rb.position = spawner;
+
+            Weapon wep = obj.GetComponent<Weapon>();
+            wep.direction = dir;
+
+            scheduledThrow = false;
+        }
+        else
+        {
+            scheduledThrow = true; //Schedule Throw for later
+            scheduledThrowDirection = dir;
+        }
     }
 
     public void Die()
