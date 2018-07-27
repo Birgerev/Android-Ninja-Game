@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class RigidbodyPixel : MonoBehaviour {
 
-    public float pixelSize = 0.0625f;
+    public float pixelSize = 0.0625f;       //Used for aligning to grid
 
-    public bool doGravity = false;
+    public bool simulate = false;
+    public bool doGravity = false;          
     public float gravityScale = 0.08f;
 
     public bool grounded = false;
@@ -16,12 +17,15 @@ public class RigidbodyPixel : MonoBehaviour {
     public Vector2 velocity = Vector2.zero;
     public float velocitySpeed = 0.04f;
     public Vector3 position;
-    public float velocityDropoff = 0.97f;
+    public float yDropoff = 0.97f;
     public float xDropoff = 0.85f;
 
+    public float friction = 0;
+    
 
     void Start () {
         position = transform.position;
+
         StartCoroutine(loop());
 	}
 	
@@ -33,22 +37,22 @@ public class RigidbodyPixel : MonoBehaviour {
         pos.y = pixelSize * Mathf.RoundToInt(pos.y / pixelSize);
         pos.z = 0;
 
-        if (doGravity)
+        if (simulate)
         {
-            print(transform.position.x + " " + xGround);
+            //Set Grounded state
             grounded = (transform.position.y <= groundLevel && transform.position.x > -xGround && transform.position.x < xGround);
 
             if (grounded)
             {
-                if(transform.position.y < groundLevel)
-                pos.y = pixelSize * Mathf.RoundToInt(groundLevel / pixelSize);
-                
-                position = new Vector3(position.x, groundLevel);
+                //Snap To Ground
+                if (position.y < groundLevel)
+                {
+                    position.y = pixelSize * Mathf.RoundToInt(groundLevel / pixelSize);
+                    pos.y = pixelSize * Mathf.RoundToInt(groundLevel / pixelSize);
+                }
             }
+
             //Make Ninja stand on ground
-
-
-
             if (grounded && velocity.y < 0)
             {
                 velocity = new Vector2(velocity.x, 0);      //Reset Y velocity
@@ -62,14 +66,14 @@ public class RigidbodyPixel : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(1 / 30);
-            if (doGravity)
+            if (simulate)
             {
                 Velocity();
 
-                Gravity();
+                if(doGravity)
+                    Gravity();
 
                 VelocityDropoff();
-
             }
         }
     }
@@ -92,8 +96,11 @@ public class RigidbodyPixel : MonoBehaviour {
 
     void VelocityDropoff()
     {
-        velocity *= velocityDropoff;
-        velocity = new Vector2(velocity.x * xDropoff, velocity.y);
+        velocity = new Vector2(velocity.x * xDropoff, velocity.y * yDropoff);
+
+        //Friction
+        if(grounded)
+            velocity = new Vector2(velocity.x * friction, velocity.y);
 
         /*
         if (velocity.x != 0)

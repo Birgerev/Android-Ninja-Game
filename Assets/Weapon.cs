@@ -5,6 +5,8 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 
     public Vector3 direction;
+    public GameObject owner;
+
 
     // Use this for initialization
     void Start () {
@@ -15,4 +17,22 @@ public class Weapon : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (owner != col.gameObject)
+        {
+            if (col.GetComponent<Enemy>() != null)
+            {
+                col.GetComponent<Enemy>().Knockback(direction);
+                Destroy(gameObject);
+            }
+            else if (col.GetComponent<Player>() != null)
+            {
+                //TODO make player knock over
+                Destroy(gameObject);
+            }
+        }
+    }
 }
