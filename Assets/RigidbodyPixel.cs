@@ -20,8 +20,7 @@ public class RigidbodyPixel : MonoBehaviour {
     public float yDropoff = 0.97f;
     public float xDropoff = 0.85f;
 
-    public float friction = 0;
-    
+
 
     void Start () {
         position = transform.position;
@@ -99,8 +98,8 @@ public class RigidbodyPixel : MonoBehaviour {
         velocity = new Vector2(velocity.x * xDropoff, velocity.y * yDropoff);
 
         //Friction
-        if(grounded)
-            velocity = new Vector2(velocity.x * friction, velocity.y);
+        //if(grounded)
+        //    velocity = new Vector2(velocity.x * friction, velocity.y);
 
         /*
         if (velocity.x != 0)

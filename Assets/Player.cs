@@ -17,9 +17,7 @@ public class Player : MonoBehaviour {
     public float knockbackScale;
     public bool falling = false;
 
-    public float friction = 0;
-    public float dashfriction = 0;
-
+    public float dashFriction;
 
     public bool knockback;  //For Debuging knockback power
     //private variables
@@ -30,24 +28,35 @@ public class Player : MonoBehaviour {
     void Start ()
     {
         physics = transform.GetComponent<RigidbodyPixel>();
-        physics.friction = friction;
     }
 	
 	void Update () {
         if (scheduledThrow)     //Try Throwing weapon if scheduled, will continiue til' success
             Throw(scheduledThrowDirection);
 
+        //Friction
+        if (physics.grounded)
+        {
+            if (dashing)
+            {
+                physics.velocity *= dashFriction;
+            }
+            else
+            {
+                physics.velocity = new Vector2(0, physics.velocity.y);
+            }
+        }
+
         if (dashing)
         {
             dashframes++;
-            if (physics.velocity.x < 0.05f && dashframes > 2)
+            if (physics.velocity.x < 0.05f && physics.velocity.x > -0.05f && dashframes > 2)
             {
-                physics.friction = friction;
                 dashing = false;
             }
             else
             {
-                physics.friction = dashfriction;
+
             }
         }
 
@@ -77,7 +86,6 @@ public class Player : MonoBehaviour {
         {
             dashframes = 0;
             dashing = true;
-            physics.friction = dashfriction;
             physics.velocity += new Vector2(dashForce * dir.x, 0);
         }
     }

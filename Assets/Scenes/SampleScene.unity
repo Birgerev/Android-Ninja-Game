@@ -255,8 +255,7 @@ MonoBehaviour:
   velocitySpeed: 0.04
   position: {x: 0, y: 0, z: 0}
   yDropoff: 0.97
-  xDropoff: 0.96
-  friction: 0
+  xDropoff: 0.95
 --- !u!61 &994759305
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -357,12 +356,11 @@ MonoBehaviour:
   weapon: {fileID: 1142331124478134, guid: cf5db1f72a5d4f44c8f81e45c137fd71, type: 2}
   jumpForce: 0.75
   jumpTimeInAir: 0.5
-  dashForce: 0.5
+  dashForce: 0.9
   dashing: 0
   knockbackScale: 0.3
   falling: 0
-  friction: 0
-  dashfriction: 0.75
+  dashFriction: 0.55
   knockback: 0
 --- !u!1 &1020424094
 GameObject:
@@ -481,7 +479,6 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   yDropoff: 0.97
   xDropoff: 0.8
-  friction: 0
 --- !u!61 &1057601058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -823,7 +820,6 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   yDropoff: 0.97
   xDropoff: 0.9
-  friction: -4.9375
 --- !u!212 &1559411997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -963,7 +959,6 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   yDropoff: 0.97
   xDropoff: 0.9
-  friction: -4.9375
 --- !u!212 &1863116581
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1175,7 +1170,6 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   yDropoff: 0.97
   xDropoff: 0.9
-  friction: -4.9375
 --- !u!212 &2005297128
 SpriteRenderer:
   m_ObjectHideFlags: 0
