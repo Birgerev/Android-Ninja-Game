@@ -11,14 +11,16 @@ public class RigidbodyPixel : MonoBehaviour {
 
     public bool grounded = false;
     public float groundLevel = -4f;
+    public float xGround = -4.9375f;
 
     public Vector2 velocity = Vector2.zero;
     public float velocitySpeed = 0.04f;
     public Vector3 position;
     public float velocityDropoff = 0.97f;
     public float xDropoff = 0.85f;
-    
-	void Start () {
+
+
+    void Start () {
         position = transform.position;
         StartCoroutine(loop());
 	}
@@ -33,7 +35,8 @@ public class RigidbodyPixel : MonoBehaviour {
 
         if (doGravity)
         {
-            grounded = (transform.position.y <= groundLevel);
+            print(transform.position.x + " " + xGround);
+            grounded = (transform.position.y <= groundLevel && transform.position.x > -xGround && transform.position.x < xGround);
 
             if (grounded)
             {

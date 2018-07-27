@@ -249,6 +249,7 @@ MonoBehaviour:
   gravityScale: 0.08
   grounded: 0
   groundLevel: -4
+  xGround: 4.9375
   velocity: {x: 0, y: 0}
   velocitySpeed: 0.04
   position: {x: 0, y: 0, z: 0}
@@ -313,7 +314,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -9
   m_Sprite: {fileID: 21300000, guid: d769d5b57e87a5a43af314b9b0edb7e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -331,7 +332,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994759303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.44, z: 0}
+  m_LocalPosition: {x: -0.39, y: -3.293, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 557313294}
@@ -603,6 +604,7 @@ MonoBehaviour:
   gravityScale: 0.0125
   grounded: 0
   groundLevel: -4
+  xGround: -4.9375
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
@@ -740,6 +742,7 @@ MonoBehaviour:
   gravityScale: 0.0125
   grounded: 0
   groundLevel: -4
+  xGround: -4.9375
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
@@ -949,6 +952,7 @@ MonoBehaviour:
   gravityScale: 0.0125
   grounded: 0
   groundLevel: -4
+  xGround: -4.9375
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
