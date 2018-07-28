@@ -23,6 +23,7 @@ public class Player : MonoBehaviour {
     //private variables
     bool scheduledThrow = false; //waits for player to land on ground or for gravity to turn off before using weapon
     Vector2 scheduledThrowDirection = Vector2.zero;
+    int fallingframes = 0;
     int dashframes = 0;
 
     void Start ()
@@ -34,8 +35,17 @@ public class Player : MonoBehaviour {
         if (scheduledThrow)     //Try Throwing weapon if scheduled, will continiue til' success
             Throw(scheduledThrowDirection);
 
+        fallingframes++;
+        dashframes++;
+
+        if(falling && physics.grounded && fallingframes > 5)
+        {
+            falling = false;
+            fallingframes = 0;
+        }
+
         //Friction
-        if (physics.grounded)
+        if (physics.grounded && !falling)
         {
             if (dashing)
             {
@@ -49,7 +59,6 @@ public class Player : MonoBehaviour {
 
         if (dashing)
         {
-            dashframes++;
             if (physics.velocity.x < 0.05f && physics.velocity.x > -0.05f && dashframes > 2)
             {
                 dashing = false;
@@ -142,6 +151,7 @@ public class Player : MonoBehaviour {
     public void Knockback(Vector2 dir)
     {
         falling = true;
+        fallingframes = 0;
         physics.velocity = new Vector2(dir.x * knockbackScale, 0.5f);
     }
 }
