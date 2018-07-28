@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
     public float dashFriction;
 
     public bool knockback;  //For Debuging knockback power
+
     //private variables
     bool scheduledThrow = false; //waits for player to land on ground or for gravity to turn off before using weapon
     Vector2 scheduledThrowDirection = Vector2.zero;
@@ -35,9 +36,11 @@ public class Player : MonoBehaviour {
         if (scheduledThrow)     //Try Throwing weapon if scheduled, will continiue til' success
             Throw(scheduledThrowDirection);
 
+        //Update frame timers
         fallingframes++;
         dashframes++;
 
+        //Fixes knockback friction bug
         if(falling && physics.grounded && fallingframes > 5)
         {
             falling = false;
@@ -59,6 +62,7 @@ public class Player : MonoBehaviour {
 
         if (dashing)
         {
+            //Stop dashing if standing still
             if (physics.velocity.x < 0.05f && physics.velocity.x > -0.05f && dashframes > 2)
             {
                 dashing = false;
