@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 
     public Manager manager;     //Manager Script
     public GameObject weapon; //Weapon Prefab, usually asigned by the Manager script
+    public Animator anim;
     RigidbodyPixel physics; //Rigidbody2D
 
     public float jumpForce = 0.75f;
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour {
 
     public bool knockback;  //For Debuging knockback power
 
+    bool facing; //true if direction is left
+
     //private variables
     bool scheduledThrow = false; //waits for player to land on ground or for gravity to turn off before using weapon
     Vector2 scheduledThrowDirection = Vector2.zero;
@@ -30,6 +33,7 @@ public class Player : MonoBehaviour {
     void Start ()
     {
         physics = transform.GetComponent<RigidbodyPixel>();
+        anim = transform.GetComponent<Animator>();
     }
 	
 	void Update () {
@@ -39,6 +43,16 @@ public class Player : MonoBehaviour {
         //Update frame timers
         fallingframes++;
         dashframes++;
+        
+        //Animation
+        anim.SetBool("Dashing", dashing);
+        anim.SetBool("Grounded", physics.grounded);
+        if (anim.GetBool("Falling") && physics.grounded)
+            anim.SetBool("Falling", false);
+
+
+        //Set Flip X in spriteRenderer
+        transform.GetComponent<SpriteRenderer>().flipX = facing;
 
         //Fixes knockback friction bug
         if(falling && physics.grounded && fallingframes > 5)
@@ -97,6 +111,11 @@ public class Player : MonoBehaviour {
     {
         if (physics.grounded)
         {
+            //Change Facing Direction
+            facing = (dir.x < 0);
+
+
+            //Dash Behaviour
             dashframes = 0;
             dashing = true;
             physics.velocity += new Vector2(dashForce * dir.x, 0);
@@ -107,6 +126,9 @@ public class Player : MonoBehaviour {
     {
         if (physics.grounded)
         {
+            //Animation
+            anim.SetTrigger("Jump");
+
             physics.velocity += new Vector2(0, jumpForce);
             StartCoroutine(jump());
         }
@@ -125,12 +147,22 @@ public class Player : MonoBehaviour {
         yield return new WaitForSeconds(jumpTimeInAir);
 
         physics.doGravity = true;
+
+        //Animation
+        anim.SetBool("Falling", true);
+        anim.SetBool("Disoriented", false);
     }
 
     public void Throw(Vector2 dir)
     {
+        //Change Facing Direction
+        facing = (dir.x < 0);
+
         if (physics.grounded || !physics.doGravity)//Allow Throw If On Ground or Frozen in air
         {
+            //Animation
+            anim.SetTrigger("Throw");
+
             Vector3 spawner = transform.Find((dir.x == 1) ? "right" : "left").transform.position;
 
             GameObject obj = Instantiate(weapon);

@@ -111,7 +111,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0.04
   position: {x: 1.0549453, y: -1.5538117, z: 0}
-  velocityDropoff: 1
+  yDropoff: 0.97
   xDropoff: 1
 --- !u!114 &114466513359766892
 MonoBehaviour:
