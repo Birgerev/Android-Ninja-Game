@@ -19,6 +19,8 @@ TextureImporter:
     21300028: Ninja_14
     21300030: Ninja_15
     21300032: Ninja_16
+    21300034: Ninja_17
+    21300036: Ninja_18
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -135,7 +137,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bacb5c05ed7240468cb7e67e102950c
+      spriteID: ceb52a1ac24b6bb4d8f1ca171ad65fa1
       vertices: []
       indices: 
       edges: []
@@ -155,7 +157,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 321a226954b484a428524d7c64845cd2
+      spriteID: c80d3d3201bcd414b9ddd87d10f353e8
       vertices: []
       indices: 
       edges: []
@@ -175,7 +177,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40491ce1c789d1442aeabc9f20f402fe
+      spriteID: 3ac4c34940efabd40baccbbf33ef543e
       vertices: []
       indices: 
       edges: []
@@ -195,7 +197,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b835599554ce647418e0cef695d44143
+      spriteID: bddaf10c1276a0747a8016dd5c084716
       vertices: []
       indices: 
       edges: []
@@ -215,7 +217,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cee72b72298c2294d93de89991666d12
+      spriteID: 384c33f29f308af419d1d3718d310dd1
       vertices: []
       indices: 
       edges: []
@@ -235,7 +237,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a807a178c6aa8aa4ba2b138c53d52287
+      spriteID: c0d6fbb57ef9b13499af647c8aa41d9e
       vertices: []
       indices: 
       edges: []
@@ -244,7 +246,7 @@ TextureImporter:
       name: Ninja_6
       rect:
         serializedVersion: 2
-        x: 544
+        x: 96
         y: 544
         width: 32
         height: 32
@@ -255,33 +257,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 974de256e024f7242a1fa666797d7c2f
+      spriteID: 34b70be6ab3f95f4f93e7041681b2e92
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: Ninja_7
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 544
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2c0a678e1c093d409f3eadeb6bb72bc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ninja_8
       rect:
         serializedVersion: 2
         x: 0
@@ -295,13 +277,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39e9b85146859304a969491c90324e0d
+      spriteID: 98989bf8e41b3c44ba9e4ec8beb7d790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_9
+      name: Ninja_8
       rect:
         serializedVersion: 2
         x: 32
@@ -315,13 +297,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6dc88b4880b07149ba571e1d5d4baf5
+      spriteID: afde6d2a50083d84085f143df3392422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_10
+      name: Ninja_9
       rect:
         serializedVersion: 2
         x: 64
@@ -335,13 +317,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fca9c3f2a10dceb4db5db727aa2d28fe
+      spriteID: c5043468da4d757408b626b0dd2b3b0b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_11
+      name: Ninja_10
       rect:
         serializedVersion: 2
         x: 96
@@ -355,13 +337,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12bc5c47a11930d449b5a08d81f82bc5
+      spriteID: 70f96c25015ae43418dafa8acc7f4f78
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_12
+      name: Ninja_11
       rect:
         serializedVersion: 2
         x: 128
@@ -375,16 +357,16 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14e28e82db0138740811da2bc2a51ec2
+      spriteID: 36ab172b916dc0040817554895f02dba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_13
+      name: Ninja_12
       rect:
         serializedVersion: 2
-        x: 480
+        x: 160
         y: 512
         width: 32
         height: 32
@@ -395,67 +377,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa9f6532e8ba99a45b66f5b7fbe4f9d8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ninja_14
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 512
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 220ed11fa98a1d84eb7507de8b9086d6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ninja_15
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 512
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03270641323cbc146aec37a30671bcbb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ninja_16
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 512
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff24ffba2b8aa9d44b2e9055e13006d3
+      spriteID: 2389bc0f9b070134abb21c6740a7f8a5
       vertices: []
       indices: 
       edges: []
