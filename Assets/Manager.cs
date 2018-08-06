@@ -7,9 +7,13 @@ public class Manager : MonoBehaviour {
     public bool LockFpsSecure = true;
     public int target = 30;
 
+    public int score = 30;
+
+    public static Manager instance;
+
     // Use this for initialization
     void Start () {
-
+        instance = this;
         if (LockFpsSecure)
         {
             QualitySettings.vSyncCount = 0;
