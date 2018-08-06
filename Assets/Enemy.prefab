@@ -161,6 +161,7 @@ MonoBehaviour:
   speed: 0
   falling: 0
   knockbackScale: 0.3
+  dashScale: {x: 0.5, y: 0.25}
 --- !u!114 &114603864888334752
 MonoBehaviour:
   m_ObjectHideFlags: 1

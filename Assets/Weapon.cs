@@ -25,7 +25,9 @@ public class Weapon : MonoBehaviour {
         {
             if (col.GetComponent<Enemy>() != null)
             {
-                col.GetComponent<Enemy>().Knockback(direction);
+                col.GetComponent<Enemy>().Knockback(direction, 
+                    new Vector2(col.GetComponent<Enemy>().knockbackScale, col.GetComponent<Enemy>().knockbackScale));
+
                 Destroy(gameObject);
             }
             else if (col.GetComponent<Player>() != null)

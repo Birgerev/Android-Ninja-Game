@@ -1658,6 +1658,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114163201027202308, guid: e902eadfa91c49543bbbfec150339bad,
+        type: 2}
+      propertyPath: dashScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114163201027202308, guid: e902eadfa91c49543bbbfec150339bad,
+        type: 2}
+      propertyPath: dashScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e902eadfa91c49543bbbfec150339bad, type: 2}
   m_IsPrefabParent: 0

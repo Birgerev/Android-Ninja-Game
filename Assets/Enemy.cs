@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
     public float speed;
     public bool falling;
     public float knockbackScale;
+    public Vector2 dashScale;
 
     RigidbodyPixel rb;
     int triggerframes = 0;
@@ -23,10 +24,10 @@ public class Enemy : MonoBehaviour {
 
     }
 
-    public void Knockback(Vector2 dir)
+    public void Knockback(Vector2 dir, Vector2 strength)
     {
         print(dir);
-        rb.velocity = new Vector2(dir.x * knockbackScale, knockbackScale);
+        rb.velocity = new Vector2(dir.x * strength.x, strength.y);
     }
 
     
@@ -36,12 +37,27 @@ public class Enemy : MonoBehaviour {
         {
             if (triggerframes > 20)
             {
-                print("col");
-                Vector2 dir = new Vector2(-1, 0);
-                if (transform.position.x - col.transform.position.x > 0)
-                    dir = new Vector2(1, 0);
-                Knockback(dir);
+                Vector2 dir = new Vector2((transform.position.x - col.transform.position.x > 0) ? 1 : -1, 0);
+                Knockback(dir, new Vector2(knockbackScale, knockbackScale));
                 triggerframes = 0;
+            }
+        }
+
+        if (col.name.Contains("Ninja"))     //For Player Collisions
+        {
+            if (triggerframes > 20)
+            {
+                //Dash Collision
+                if (col.gameObject.GetComponent<Player>().dashing)
+                {
+                    Vector2 dir = new Vector2((transform.position.x - col.transform.position.x > 0) ? 1 : -1, 0);
+                    Knockback(dir, dashScale);
+                    triggerframes = 0;
+                }
+                else
+                {
+                    //TODO  knock player over
+                }
             }
         }
     }
