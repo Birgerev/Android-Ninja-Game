@@ -1337,7 +1337,7 @@ MonoBehaviour:
   weapon: {fileID: 1142331124478134, guid: cf5db1f72a5d4f44c8f81e45c137fd71, type: 2}
   anim: {fileID: 0}
   jumpForce: 0.75
-  jumpTimeInAir: 0.5
+  jumpTimeInAir: 0.65
   dashForce: 0.9
   dashing: 0
   knockbackScale: 0.3
