@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour {
     {
         if (col.name.Contains("Enemy"))
         {
-            if (triggerframes > 20)
+            if (triggerframes > 2)
             {
                 Vector2 dir = new Vector2((transform.position.x - col.transform.position.x > 0) ? 1 : -1, 0);
                 Knockback(dir, new Vector2(knockbackScale, knockbackScale));
@@ -43,21 +43,14 @@ public class Enemy : MonoBehaviour {
             }
         }
 
-        if (col.name.Contains("Ninja"))     //For Player Collisions
+        if (col.name.Contains("Kick"))     //For Player Collisions
         {
-            if (triggerframes > 20)
+            if (triggerframes > 2)
             {
                 //Dash Collision
-                if (col.gameObject.GetComponent<Player>().dashing)
-                {
-                    Vector2 dir = new Vector2((transform.position.x - col.transform.position.x > 0) ? 1 : -1, 0);
-                    Knockback(dir, dashScale);
-                    triggerframes = 0;
-                }
-                else
-                {
-                    //TODO  knock player over
-                }
+                Vector2 dir = new Vector2((transform.position.x - col.transform.position.x > 0) ? 1 : -1, 0);
+                Knockback(dir, dashScale);
+                triggerframes = 0;
             }
         }
     }

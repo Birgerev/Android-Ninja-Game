@@ -33,10 +33,19 @@ public class Player : MonoBehaviour {
     int fallingframes = 0;
     int dashframes = 0;
 
+    GameObject leftkick;
+    GameObject rightkick;
+
     void Start ()
     {
         physics = transform.GetComponent<RigidbodyPixel>();
         anim = transform.GetComponent<Animator>();
+
+        leftkick = transform.Find("leftKick").gameObject;
+        rightkick = transform.Find("rightKick").gameObject;
+
+        leftkick.SetActive(false);
+        rightkick.SetActive(false);
 
         //Start Recharge Loop
         StartCoroutine(WeaponRecharge());
@@ -67,16 +76,21 @@ public class Player : MonoBehaviour {
             falling = false;
             fallingframes = 0;
         }
-
-        //Friction
+        
         if (physics.grounded && !falling)
         {
             if (dashing)
             {
+                //Dash Friction
                 physics.velocity *= dashFriction;
             }
             else
             {
+                //Disable Kick Triggers if not dashing
+                leftkick.SetActive(false);
+                rightkick.SetActive(false);
+
+                //Remove x velocity
                 physics.velocity = new Vector2(0, physics.velocity.y);
             }
         }
@@ -121,6 +135,7 @@ public class Player : MonoBehaviour {
             //Change Facing Direction
             facing = (dir.x < 0);
 
+            ((dir.x > 0) ? rightkick : leftkick).SetActive(true);
 
             //Dash Behaviour
             dashframes = 0;
