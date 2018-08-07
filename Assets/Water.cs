@@ -30,6 +30,7 @@ public class Water : MonoBehaviour {
         {
             //Destroy anything but the player
             Destroy(col.gameObject);
+            Manager.instance.score++;
         }
     }
 }

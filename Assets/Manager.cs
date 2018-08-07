@@ -5,7 +5,7 @@ using UnityEngine;
 public class Manager : MonoBehaviour {
 
     public bool LockFpsSecure = true;
-    public int target = 30;
+    public int targetFps = 30;
 
     public int score = 30;
 
@@ -24,8 +24,8 @@ public class Manager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Application.targetFrameRate != target)
-            Application.targetFrameRate = target;
+        if (Application.targetFrameRate != targetFps)
+            Application.targetFrameRate = targetFps;
 
     }
 }
