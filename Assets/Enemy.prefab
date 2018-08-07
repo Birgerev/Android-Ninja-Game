@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cac0ff8007c2a24485a45e5a17b80ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.1
   falling: 0
   knockbackScale: 0.3
   dashScale: {x: 0.5, y: 0.25}

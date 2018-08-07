@@ -8,29 +8,53 @@ public class Enemy : MonoBehaviour {
     public bool falling;
     public float knockbackScale;
     public Vector2 dashScale;
+    public Vector2 forward;
+
+    public int maxKnockbacks;
 
     RigidbodyPixel rb;
     int triggerframes = 0;
+    int fallframes = 0;
 
     // Use this for initialization
     void Start () {
         rb = transform.GetComponent<RigidbodyPixel>();
-
+        StartCoroutine(Run());
 	}
 	
 	// Update is called once per frame
 	void Update () {
         triggerframes++;
+        fallframes++;
 
+        transform.GetComponent<SpriteRenderer>().flipX = (forward.x < 0) ? true : false;
+
+        if (fallframes > 4)
+            if (rb.grounded)
+                falling = false;
+
+        Run();
     }
 
     public void Knockback(Vector2 dir, Vector2 strength)
     {
         print(dir);
         rb.velocity = new Vector2(dir.x * strength.x, strength.y);
+        falling = true;
     }
 
-    
+    IEnumerator Run()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.05f);
+            if (rb.grounded && !falling && rb.velocity.y == 0)
+            {
+                rb.velocity = new Vector2(speed * forward.x, rb.velocity.y);
+            }
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.name.Contains("Enemy"))

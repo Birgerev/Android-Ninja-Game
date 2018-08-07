@@ -26,8 +26,11 @@ public class EnemySpawner : MonoBehaviour {
             yield return new WaitForSeconds(loopSpeed);
             GameObject spawnpoint = spawnpoints[Random.Range(0, spawnpoints.Length)];
 
+            Vector2 direction = new Vector2((spawnpoint.transform.position.x < 0) ? 1 : -1, 0);
+
             GameObject obj = Instantiate(enemy);
             obj.transform.position = spawnpoint.transform.position;
+            obj.GetComponent<Enemy>().forward = direction;
         }
     }
 }
