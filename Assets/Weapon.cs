@@ -7,6 +7,10 @@ public class Weapon : MonoBehaviour {
     public Vector3 direction;
     public GameObject owner;
 
+    public float cooldown;
+    public int maxAmount;
+    public float recharge;
+
 
     // Use this for initialization
     void Start () {

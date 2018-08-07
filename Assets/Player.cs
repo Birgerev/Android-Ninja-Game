@@ -24,6 +24,9 @@ public class Player : MonoBehaviour {
 
     bool facing; //true if direction is left
 
+    public int weaponAmount = 0;
+    public bool weaponcooldown = false;
+
     //private variables
     bool scheduledThrow = false; //waits for player to land on ground or for gravity to turn off before using weapon
     Vector2 scheduledThrowDirection = Vector2.zero;
@@ -34,6 +37,10 @@ public class Player : MonoBehaviour {
     {
         physics = transform.GetComponent<RigidbodyPixel>();
         anim = transform.GetComponent<Animator>();
+
+        //Start Recharge Loop
+        StartCoroutine(WeaponRecharge());
+        StartCoroutine(Cooldown());
     }
 	
 	void Update () {
@@ -153,34 +160,65 @@ public class Player : MonoBehaviour {
         anim.SetBool("Disoriented", false);
     }
 
+    IEnumerator WeaponRecharge()
+    {
+        weaponAmount = weapon.GetComponent<Weapon>().maxAmount;
+        while (true)
+        {
+            yield return new WaitForSeconds(weapon.GetComponent<Weapon>().recharge);
+            if(weaponAmount < weapon.GetComponent<Weapon>().maxAmount)
+            {
+                weaponAmount++;
+            }
+        }
+    }
+
+    IEnumerator Cooldown()
+    {
+        while (true)
+        {
+            if (weaponcooldown)
+            {
+                yield return new WaitForSeconds(weapon.GetComponent<Weapon>().cooldown);
+                weaponcooldown = false;
+            }
+            else yield return new WaitForSeconds(0.05f);
+        }
+    }
+
     public void Throw(Vector2 dir)
     {
         //Change Facing Direction
         facing = (dir.x < 0);
-
-        if (physics.grounded || !physics.doGravity)//Allow Throw If On Ground or Frozen in air
+        if (weaponAmount > 0 && !weaponcooldown)
         {
-            //Animation
-            anim.SetTrigger("Throw");
+            if (physics.grounded || !physics.doGravity)//Allow Throw If On Ground or Frozen in air
+            {
+                //Animation
+                anim.SetTrigger("Throw");
 
-            Vector3 spawner = transform.Find((dir.x == 1) ? "right" : "left").transform.position;
+                Vector3 spawner = transform.Find((dir.x == 1) ? "right" : "left").transform.position;
 
-            GameObject obj = Instantiate(weapon);
-            obj.transform.position = spawner;
+                GameObject obj = Instantiate(weapon);
+                obj.transform.position = spawner;
 
-            RigidbodyPixel rb = obj.GetComponent<RigidbodyPixel>();
-            rb.position = spawner;
+                RigidbodyPixel rb = obj.GetComponent<RigidbodyPixel>();
+                rb.position = spawner;
 
-            Weapon wep = obj.GetComponent<Weapon>();
-            wep.direction = dir;
-            wep.owner = gameObject;
+                Weapon wep = obj.GetComponent<Weapon>();
+                wep.direction = dir;
+                wep.owner = gameObject;
 
-            scheduledThrow = false;
-        }
-        else
-        {
-            scheduledThrow = true; //Schedule Throw for later
-            scheduledThrowDirection = dir;
+                scheduledThrow = false;
+
+                weaponcooldown = true;
+                weaponAmount--;
+            }
+            else
+            {
+                scheduledThrow = true; //Schedule Throw for later
+                scheduledThrowDirection = dir;
+            }
         }
     }
     

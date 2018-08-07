@@ -138,6 +138,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   owner: {fileID: 0}
+  cooldown: 0.1
+  maxAmount: 4
+  recharge: 1
 --- !u!212 &212743410944637174
 SpriteRenderer:
   m_ObjectHideFlags: 1
