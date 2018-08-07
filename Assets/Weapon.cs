@@ -11,15 +11,14 @@ public class Weapon : MonoBehaviour {
     public int maxAmount;
     public float recharge;
 
+    public int despawnAge = 75;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
+    int age;
+    
 	void Update () {
-		
+        age++;
+        if (age > despawnAge)
+            Destroy (gameObject);
 	}
 
     void OnTriggerEnter2D(Collider2D col)

@@ -141,6 +141,7 @@ MonoBehaviour:
   cooldown: 0.1
   maxAmount: 4
   recharge: 1
+  despawnAge: 75
 --- !u!212 &212743410944637174
 SpriteRenderer:
   m_ObjectHideFlags: 1
