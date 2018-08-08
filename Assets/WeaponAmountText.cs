@@ -1,5 +1,6 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class WeaponAmountText : MonoBehaviour {
 
@@ -7,9 +8,15 @@ public class WeaponAmountText : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        transform.GetComponent<Text>().text = GameObject.Find("Ninja").GetComponent<Player>().weaponAmount.ToString();
-	}
+
+    // Update is called once per frame
+    void Update() {
+        try {
+            transform.GetComponent<Text>().text = GameObject.Find("Ninja").GetComponent<Player>().weaponAmount.ToString();
+        }
+        catch (Exception e)
+        {
+
+        }
+    }
 }

@@ -43,6 +43,7 @@ public class Player : MonoBehaviour {
 
         leftkick = transform.Find("leftKick").gameObject;
         rightkick = transform.Find("rightKick").gameObject;
+        gameObject.name = "Ninja";
 
         leftkick.SetActive(false);
         rightkick.SetActive(false);

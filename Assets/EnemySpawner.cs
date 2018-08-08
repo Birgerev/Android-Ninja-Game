@@ -22,7 +22,6 @@ public class EnemySpawner : MonoBehaviour {
     {
         while (true)
         {
-            print("BOI");
             yield return new WaitForSeconds(loopSpeed);
             GameObject spawnpoint = spawnpoints[Random.Range(0, spawnpoints.Length)];
 

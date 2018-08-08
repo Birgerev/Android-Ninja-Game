@@ -10,8 +10,6 @@ public class Enemy : MonoBehaviour {
     public Vector2 dashScale;
     public Vector2 forward;
 
-    public int maxKnockbacks;
-
     RigidbodyPixel rb;
     int triggerframes = 0;
     int fallframes = 0;
@@ -32,13 +30,12 @@ public class Enemy : MonoBehaviour {
         if (fallframes > 4)
             if (rb.grounded)
                 falling = false;
-
+        
         Run();
     }
 
     public void Knockback(Vector2 dir, Vector2 strength)
     {
-        print(dir);
         rb.velocity = new Vector2(dir.x * strength.x, strength.y);
         falling = true;
     }

@@ -8,6 +8,9 @@ public class Manager : MonoBehaviour {
     public int targetFps = 30;
 
     public int score = 30;
+    public GameObject PlayerPrefab;
+
+    public bool spawnEnemies = false;
 
     public static Manager instance;
 
@@ -19,6 +22,9 @@ public class Manager : MonoBehaviour {
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 30;
         }
+
+        //For Testing
+        Play();
     }
 	
 	// Update is called once per frame
@@ -27,5 +33,20 @@ public class Manager : MonoBehaviour {
         if (Application.targetFrameRate != targetFps)
             Application.targetFrameRate = targetFps;
 
+    }
+
+    public void Lose()
+    {
+        spawnEnemies = false;
+    }
+
+    public void Reset()
+    {
+
+    }
+
+    public void Play()
+    {
+        Instantiate(PlayerPrefab);
     }
 }

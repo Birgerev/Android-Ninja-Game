@@ -19,18 +19,23 @@ public class Water : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        GameObject obj = Instantiate(splash);
-        obj.transform.position = new Vector2(col.transform.position.x, yLevel);
-        
-        if (col.gameObject.name.Contains("Ninja"))
+        if (!col.name.Contains("Kick"))
         {
+            GameObject obj = Instantiate(splash);
+            obj.transform.position = new Vector2(col.transform.position.x, yLevel);
 
-        }
-        else
-        {
-            //Destroy anything but the player
-            Destroy(col.gameObject);
-            Manager.instance.score++;
+            print(col.name);
+            if (col.gameObject.name.Contains("Ninja"))
+            {
+                Destroy(col.gameObject);
+                Manager.instance.Lose();
+            }
+            else
+            {
+                //Destroy anything but the player
+                Destroy(col.gameObject);
+                Manager.instance.score++;
+            }
         }
     }
 }

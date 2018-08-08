@@ -121,7 +121,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61599902852202014
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -162,6 +162,7 @@ MonoBehaviour:
   falling: 0
   knockbackScale: 0.3
   dashScale: {x: 0.5, y: 0.25}
+  forward: {x: 0, y: 0}
 --- !u!114 &114603864888334752
 MonoBehaviour:
   m_ObjectHideFlags: 1
