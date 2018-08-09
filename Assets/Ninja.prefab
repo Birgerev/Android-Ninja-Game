@@ -192,7 +192,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.186}
@@ -294,7 +294,7 @@ MonoBehaviour:
   jumpTimeInAir: 0.65
   dashForce: 0.9
   dashing: 0
-  knockbackScale: 0.3
+  knockbackScale: {x: 0.25, y: 0.4}
   falling: 0
   dashFriction: 0.55
   knockback: 0

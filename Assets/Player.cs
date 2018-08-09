@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
     public float dashForce = 0.25f;
     public bool dashing;
 
-    public float knockbackScale;
+    public Vector2 knockbackScale;
     public bool falling = false;
 
     public float dashFriction;
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
     Vector2 scheduledThrowDirection = Vector2.zero;
     int fallingframes = 0;
     int dashframes = 0;
+    int triggerframes = 0;
 
     GameObject leftkick;
     GameObject rightkick;
@@ -60,7 +61,8 @@ public class Player : MonoBehaviour {
         //Update frame timers
         fallingframes++;
         dashframes++;
-        
+        triggerframes++;
+
         //Animation
         anim.SetBool("Dashing", dashing);
         anim.SetBool("Grounded", physics.grounded);
@@ -112,7 +114,7 @@ public class Player : MonoBehaviour {
         if (knockback)  //Debug of knockback power
         {
             knockback = false;
-            Knockback(new Vector2(1,0));
+            //Knockback(new Vector2(1,0));
         }
         
         Controls();
@@ -238,10 +240,25 @@ public class Player : MonoBehaviour {
         }
     }
     
-    public void Knockback(Vector2 dir)
+    public void Knockback(Vector2 dir, Vector2 strength)
     {
         falling = true;
         fallingframes = 0;
-        physics.velocity = new Vector2(dir.x * knockbackScale, 0.5f);
+        physics.velocity = new Vector2(dir.x * strength.x, strength.y);
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.name.Contains("Enemy"))     //For Player Collisions
+        {
+            if (triggerframes > 2 && !dashing)
+            {
+                //Dash Collision
+                Vector2 dir = new Vector2((transform.position.x - col.transform.position.x > 0) ? 1 : -1, 0);
+                Knockback(dir, knockbackScale);
+                triggerframes = 0;
+            }
+        }
+    }
+
 }

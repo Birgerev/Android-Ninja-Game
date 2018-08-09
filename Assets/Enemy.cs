@@ -34,12 +34,6 @@ public class Enemy : MonoBehaviour {
         Run();
     }
 
-    public void Knockback(Vector2 dir, Vector2 strength)
-    {
-        rb.velocity = new Vector2(dir.x * strength.x, strength.y);
-        falling = true;
-    }
-
     IEnumerator Run()
     {
         while (true)
@@ -50,6 +44,12 @@ public class Enemy : MonoBehaviour {
                 rb.velocity = new Vector2(speed * forward.x, rb.velocity.y);
             }
         }
+    }
+
+    public void Knockback(Vector2 dir, Vector2 strength)
+    {
+        rb.velocity = new Vector2(dir.x * strength.x, strength.y);
+        falling = true;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -65,6 +65,17 @@ public class Enemy : MonoBehaviour {
         }
 
         if (col.name.Contains("Kick"))     //For Player Collisions
+        {
+            if (triggerframes > 2)
+            {
+                //Dash Collision
+                Vector2 dir = new Vector2((transform.position.x - col.transform.position.x > 0) ? 1 : -1, 0);
+                Knockback(dir, dashScale);
+                triggerframes = 0;
+            }
+        }
+
+        if (col.name.Contains("Ninja"))     //For Player Collisions
         {
             if (triggerframes > 2)
             {
