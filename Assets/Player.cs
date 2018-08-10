@@ -122,13 +122,16 @@ public class Player : MonoBehaviour {
 
     void Controls()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-            Dash(new Vector2(-1, 0));
-        if (Input.GetKeyDown(KeyCode.D))
-            Dash(new Vector2(1, 0));
+        if (Manager.instance.controllPlayer)
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+                Dash(new Vector2(-1, 0));
+            if (Input.GetKeyDown(KeyCode.D))
+                Dash(new Vector2(1, 0));
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
-            Jump();
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+                Jump();
+        }
     }
 
     public void Dash(Vector2 dir)
@@ -206,36 +209,39 @@ public class Player : MonoBehaviour {
 
     public void Throw(Vector2 dir)
     {
-        //Change Facing Direction
-        facing = (dir.x < 0);
-        if (weaponAmount > 0 && !weaponcooldown)
+        if (Manager.instance.controllPlayer)
         {
-            if (physics.grounded || !physics.doGravity)//Allow Throw If On Ground or Frozen in air
+            //Change Facing Direction
+            facing = (dir.x < 0);
+            if (weaponAmount > 0 && !weaponcooldown)
             {
-                //Animation
-                anim.SetTrigger("Throw");
+                if (physics.grounded || !physics.doGravity)//Allow Throw If On Ground or Frozen in air
+                {
+                    //Animation
+                    anim.SetTrigger("Throw");
 
-                Vector3 spawner = transform.Find((dir.x == 1) ? "right" : "left").transform.position;
+                    Vector3 spawner = transform.Find((dir.x == 1) ? "right" : "left").transform.position;
 
-                GameObject obj = Instantiate(weapon);
-                obj.transform.position = spawner;
+                    GameObject obj = Instantiate(weapon);
+                    obj.transform.position = spawner;
 
-                RigidbodyPixel rb = obj.GetComponent<RigidbodyPixel>();
-                rb.position = spawner;
+                    RigidbodyPixel rb = obj.GetComponent<RigidbodyPixel>();
+                    rb.position = spawner;
 
-                Weapon wep = obj.GetComponent<Weapon>();
-                wep.direction = dir;
-                wep.owner = gameObject;
+                    Weapon wep = obj.GetComponent<Weapon>();
+                    wep.direction = dir;
+                    wep.owner = gameObject;
 
-                scheduledThrow = false;
+                    scheduledThrow = false;
 
-                weaponcooldown = true;
-                weaponAmount--;
-            }
-            else
-            {
-                scheduledThrow = true; //Schedule Throw for later
-                scheduledThrowDirection = dir;
+                    weaponcooldown = true;
+                    weaponAmount--;
+                }
+                else
+                {
+                    scheduledThrow = true; //Schedule Throw for later
+                    scheduledThrowDirection = dir;
+                }
             }
         }
     }

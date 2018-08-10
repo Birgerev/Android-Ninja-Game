@@ -1,13 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
 public class TapTrigger : MonoBehaviour {
 
     public Vector2 dir;
-    
+
     void OnMouseDown()
     {
-        GameObject.Find("Ninja").GetComponent<Player>().Throw(dir);
+        //When Player Doesn't Exist this will throw an error
+        try
+        {
+            GameObject.Find("Ninja").GetComponent<Player>().Throw(dir);
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 }

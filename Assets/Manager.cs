@@ -10,21 +10,25 @@ public class Manager : MonoBehaviour {
     public int score = 30;
     public GameObject PlayerPrefab;
 
+    public MenuManager UI;
+
     public bool spawnEnemies = false;
+    public bool controllPlayer = false;
 
     public static Manager instance;
 
     // Use this for initialization
     void Start () {
         instance = this;
+        UI = GameObject.Find("UI").GetComponent<MenuManager>();
+
         if (LockFpsSecure)
         {
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 30;
         }
 
-        //For Testing
-        Play();
+        Reset();
     }
 	
 	// Update is called once per frame
@@ -37,16 +41,31 @@ public class Manager : MonoBehaviour {
 
     public void Lose()
     {
+        Manager.instance.controllPlayer = false;
         spawnEnemies = false;
+        UI.Lose();
     }
 
     public void Reset()
     {
-
+        score = 0;
+        
+        Instantiate(PlayerPrefab);
+        
+        KillEnemies();
     }
 
     public void Play()
     {
-        Instantiate(PlayerPrefab);
+        Manager.instance.controllPlayer = true;
+        spawnEnemies = true;
+    }
+
+    public void KillEnemies()
+    {
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            enemy.GetComponent<Enemy>().Kill(true);
+        }
     }
 }

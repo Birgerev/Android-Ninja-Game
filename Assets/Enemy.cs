@@ -51,6 +51,11 @@ public class Enemy : MonoBehaviour {
         rb.velocity = new Vector2(dir.x * strength.x, strength.y);
         falling = true;
     }
+    
+    public void Kill(bool anim)
+    {
+        Destroy(gameObject);
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {

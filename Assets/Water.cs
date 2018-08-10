@@ -7,34 +7,27 @@ public class Water : MonoBehaviour {
     public GameObject splash;
     public float yLevel;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (!col.name.Contains("Kick"))
         {
+            //Create Splash for any object falling into water
             GameObject obj = Instantiate(splash);
             obj.transform.position = new Vector2(col.transform.position.x, yLevel);
 
-            print(col.name);
             if (col.gameObject.name.Contains("Ninja"))
             {
+                //Destroy player and report to Manager that the game is over 
                 Destroy(col.gameObject);
                 Manager.instance.Lose();
             }
-            else
+            else if(col.gameObject.name.Contains("Enemy"))
             {
-                //Destroy anything but the player
-                Destroy(col.gameObject);
-                Manager.instance.score++;
+                //Kill any enemies falling into the water
+                col.GetComponent<Enemy>().Kill(false);
+                //When game is over, no more score shall be added
+                if (Manager.instance.spawnEnemies)
+                    Manager.instance.score++;
             }
         }
     }
