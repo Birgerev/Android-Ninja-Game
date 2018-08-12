@@ -287,19 +287,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2441e363f7240294d8f66f4200fd0e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   weapon: {fileID: 1142331124478134, guid: cf5db1f72a5d4f44c8f81e45c137fd71, type: 2}
-  anim: {fileID: 0}
   jumpForce: 0.75
   jumpTimeInAir: 0.65
-  dashForce: 0.9
+  dashForce: 1.02
   dashing: 0
   knockbackScale: {x: 0.25, y: 0.4}
   falling: 0
   dashFriction: 0.55
-  knockback: 0
   weaponAmount: 0
-  weaponcooldown: 0
+  SwipeResistance: 2
+  swipemodeframes: 0
 --- !u!114 &114732314111307712
 MonoBehaviour:
   m_ObjectHideFlags: 1

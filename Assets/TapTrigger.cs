@@ -5,7 +5,7 @@ public class TapTrigger : MonoBehaviour {
 
     public Vector2 dir;
 
-    void OnMouseDown()
+    void OnMouseUp()
     {
         //When Player Doesn't Exist this will throw an error
         try

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public Manager manager;     //Manager Script
+    Manager manager;     //Manager Script
     public GameObject weapon; //Weapon Prefab, usually asigned by the Manager script
-    public Animator anim;
+    Animator anim;
     RigidbodyPixel physics; //Rigidbody2D
 
     public float jumpForce = 0.75f;
@@ -20,12 +20,11 @@ public class Player : MonoBehaviour {
 
     public float dashFriction;
 
-    public bool knockback;  //For Debuging knockback power
-
-    bool facing; //true if direction is left
+    private bool facing; //true if direction is left
 
     public int weaponAmount = 0;
-    public bool weaponcooldown = false;
+    public float SwipeResistance = 0.7f;
+    private bool weaponcooldown = false;
 
     //private variables
     bool scheduledThrow = false; //waits for player to land on ground or for gravity to turn off before using weapon
@@ -33,6 +32,9 @@ public class Player : MonoBehaviour {
     int fallingframes = 0;
     int dashframes = 0;
     int triggerframes = 0;
+    public int swipemodeframes;
+
+    bool dashmode;
 
     GameObject leftkick;
     GameObject rightkick;
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour {
     {
         physics = transform.GetComponent<RigidbodyPixel>();
         anim = transform.GetComponent<Animator>();
+        manager = Manager.instance;
 
         leftkick = transform.Find("leftKick").gameObject;
         rightkick = transform.Find("rightKick").gameObject;
@@ -110,27 +113,55 @@ public class Player : MonoBehaviour {
 
             }
         }
-
-        if (knockback)  //Debug of knockback power
-        {
-            knockback = false;
-            //Knockback(new Vector2(1,0));
-        }
         
         Controls();
 	}
 
     void Controls()
     {
-        if (Manager.instance.controllPlayer)
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-                Dash(new Vector2(-1, 0));
-            if (Input.GetKeyDown(KeyCode.D))
-                Dash(new Vector2(1, 0));
+        //Called For PC Controlls
+        /*
+        if (Input.GetKeyDown(KeyCode.A))
+            Dash(new Vector2(-1, 0));
+        if (Input.GetKeyDown(KeyCode.D))
+            Dash(new Vector2(1, 0));
 
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
-                Jump();
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+            Jump();*/
+
+        //Mobile Controlls
+        //Dash
+
+        int framesforswipe = 5;
+
+        if (Input.GetMouseButton(0))
+        {
+            if(swipemodeframes < framesforswipe)
+                swipemodeframes++;
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (swipemodeframes >= framesforswipe)
+            {
+                Vector2 deltatouch = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 dir = Vector2.zero;
+
+                if (deltatouch.x < -(SwipeResistance*dashForce))
+                    dir = new Vector2(1, 0);
+                if (deltatouch.x > (SwipeResistance * dashForce))
+                    dir = new Vector2(-1, 0);
+                if (deltatouch.y < -(jumpForce*4))
+                    dir = new Vector2(0, 1);
+                if (deltatouch.y > (dashForce))
+                    dir = new Vector2(0, -1);
+
+                if (dir.x != 0)
+                    Dash(dir);
+                if (dir.y == 1)
+                    Jump();
+            }
+            swipemodeframes = 0;
         }
     }
 
