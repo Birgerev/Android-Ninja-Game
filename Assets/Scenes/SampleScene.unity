@@ -3295,7 +3295,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.98
   m_Text: NINJA GAME
 --- !u!222 &1059784042
 CanvasRenderer:
@@ -4489,7 +4489,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.98
   m_Text: NINJA GAME
 --- !u!222 &1529367897
 CanvasRenderer:
@@ -4954,7 +4954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1007177942081514, guid: e902eadfa91c49543bbbfec150339bad, type: 2}
-  loopSpeed: 2
+  loopSpeed: 0.8
   spawnpoints:
   - {fileID: 304017861}
   - {fileID: 390254104}

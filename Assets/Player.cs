@@ -119,54 +119,44 @@ public class Player : MonoBehaviour {
 
     void Controls()
     {
-        //Called For PC Controlls
-        /*
-        if (Input.GetKeyDown(KeyCode.A))
-            Dash(new Vector2(-1, 0));
-        if (Input.GetKeyDown(KeyCode.D))
-            Dash(new Vector2(1, 0));
-
-
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
-            Jump();*/
-
-        //Mobile Controlls
-        //Dash
-
-        int framesforswipe = 5;
-
-        if (Input.GetMouseButton(0))
+        if (Manager.instance.controllPlayer)
         {
-            if(swipemodeframes < framesforswipe)
-                swipemodeframes++;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (swipemodeframes >= framesforswipe)
-            {
-                Vector2 deltatouch = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector2 dir = Vector2.zero;
+            int framesforswipe = 5;
 
-                if (deltatouch.x < -(SwipeResistance*dashForce))
-                    dir = new Vector2(1, 0);
-                if (deltatouch.x > (SwipeResistance * dashForce))
-                    dir = new Vector2(-1, 0);
-                if (deltatouch.y < -(jumpForce*3))
-                    dir = new Vector2(0, 1);
-                if (deltatouch.y > (dashForce))
-                    dir = new Vector2(0, -1);
-
-                if (dir.x != 0)
-                    Dash(dir);
-                if (dir.y == 1)
-                    Jump();
-            }else
+            if (Input.GetMouseButton(0))
             {
-                //Throw
-                print(Input.mousePosition.x + " " + Screen.width);
-                Throw((Input.mousePosition.x > Screen.width/2) ? new Vector2(1, 0) : new Vector2(-1, 0));
+                if (swipemodeframes < framesforswipe)
+                    swipemodeframes++;
             }
-            swipemodeframes = 0;
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (swipemodeframes >= framesforswipe)
+                {
+                    Vector2 deltatouch = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Vector2 dir = Vector2.zero;
+
+                    if (deltatouch.x < -(SwipeResistance * dashForce))
+                        dir = new Vector2(1, 0);
+                    if (deltatouch.x > (SwipeResistance * dashForce))
+                        dir = new Vector2(-1, 0);
+                    if (deltatouch.y < -(jumpForce * 3))
+                        dir = new Vector2(0, 1);
+                    if (deltatouch.y > (dashForce))
+                        dir = new Vector2(0, -1);
+
+                    if (dir.x != 0)
+                        Dash(dir);
+                    if (dir.y == 1)
+                        Jump();
+                }
+                else
+                {
+                    //Throw
+                    print(Input.mousePosition.x + " " + Screen.width);
+                    Throw((Input.mousePosition.x > Screen.width / 2) ? new Vector2(1, 0) : new Vector2(-1, 0));
+                }
+                swipemodeframes = 0;
+            }
         }
     }
 
