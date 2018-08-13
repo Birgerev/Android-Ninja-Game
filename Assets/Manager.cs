@@ -8,6 +8,7 @@ public class Manager : MonoBehaviour {
     public int targetFps = 30;
 
     public int score = 30;
+    public int highscore = 30;
     public GameObject PlayerPrefab;
 
     public MenuManager UI;
@@ -28,6 +29,8 @@ public class Manager : MonoBehaviour {
             Application.targetFrameRate = 30;
         }
 
+        highscore = PlayerPrefs.GetInt("highscore", 0);
+
         Reset();
     }
 	
@@ -36,6 +39,13 @@ public class Manager : MonoBehaviour {
     {
         if (Application.targetFrameRate != targetFps)
             Application.targetFrameRate = targetFps;
+
+        //Update Highscore
+        if(score > highscore)
+        {
+            highscore = score;
+            PlayerPrefs.SetInt("highscore", highscore);
+        }
 
     }
 
