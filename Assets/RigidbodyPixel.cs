@@ -17,6 +17,7 @@ public class RigidbodyPixel : MonoBehaviour {
     public Vector2 velocity = Vector2.zero;
     public float velocitySpeed = 0.04f;
     public Vector3 position;
+    public float defaultZ = 0;
     public float yDropoff = 0.97f;
     public float xDropoff = 0.85f;
 
@@ -34,7 +35,7 @@ public class RigidbodyPixel : MonoBehaviour {
         Vector3 pos = position;
         pos.x = pixelSize * Mathf.RoundToInt(pos.x / pixelSize);
         pos.y = pixelSize * Mathf.RoundToInt(pos.y / pixelSize);
-        pos.z = 0;
+        pos.z = defaultZ;
 
         if (simulate)
         {

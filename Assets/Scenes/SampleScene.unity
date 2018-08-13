@@ -164,6 +164,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &52118361
@@ -262,6 +263,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &88125220
@@ -360,6 +362,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &101945678
@@ -832,6 +835,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &193308088
@@ -1584,6 +1588,8 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1598,6 +1604,30 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29639b1e6f392e4ab8351d334379975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixelSize: 0.0625
+  simulate: 0
+  doGravity: 0
+  gravityScale: 0.08
+  grounded: 0
+  groundLevel: -4
+  xGround: -4.9375
+  velocity: {x: 0, y: 0}
+  velocitySpeed: 0.04
+  position: {x: 0, y: 0, z: 0}
+  defaultZ: -10
+  yDropoff: 0.97
+  xDropoff: 0.85
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1618,7 +1648,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.68
+  orthographic size: 7.94
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1647,6 +1677,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26eb3c152a3aa54ba98d25c62cdbef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  lockX: 1
+  lockY: 0
 --- !u!1 &532937819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,6 +1742,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &532937822
@@ -2027,6 +2072,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &611213680
@@ -2434,6 +2480,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &813333257
@@ -2580,6 +2627,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &851601832
@@ -2678,6 +2726,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &871324621
@@ -2850,6 +2899,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &961371853
@@ -2948,6 +2998,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &1020244876
@@ -3181,6 +3232,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &1054987446
@@ -4216,6 +4268,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &1426935005
@@ -4548,6 +4601,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &1559411997
@@ -4646,6 +4700,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &1578180510
@@ -4832,6 +4887,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &1786025118
@@ -5208,6 +5264,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &1856812309
@@ -5293,6 +5350,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &1863116581
@@ -5790,6 +5848,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.9
 --- !u!212 &2005297128
