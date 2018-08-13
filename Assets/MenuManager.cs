@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
 
-    public GameObject menu;
-    public GameObject game;
-    public GameObject lose;
+    public Animator anim;
 
     // Use this for initialization
     void Start () {
-        //Menu();
-	}
+        anim = GetComponent<Animator>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,9 +20,7 @@ public class MenuManager : MonoBehaviour {
 
     public void StartGame()
     {
-        //Called by Invinsible Button In 'game' ui Section
-        menu.SetActive(false);
-        game.SetActive(true);
+        anim.SetTrigger("Next");
 
         Manager.instance.Play();
     }
@@ -31,15 +28,13 @@ public class MenuManager : MonoBehaviour {
     public void Lose()
     {
         //Called by Manager
-        game.SetActive(false);
-        lose.SetActive(true);
+        anim.SetTrigger("Next");
     }
 
     public void Menu()
     {
         //Called by Invinsible Button In 'lose' ui Section
-        lose.SetActive(false);
-        menu.SetActive(true);
+        anim.SetTrigger("Next");
 
         Manager.instance.Reset();
     }
