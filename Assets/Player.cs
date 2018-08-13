@@ -151,7 +151,7 @@ public class Player : MonoBehaviour {
                     dir = new Vector2(1, 0);
                 if (deltatouch.x > (SwipeResistance * dashForce))
                     dir = new Vector2(-1, 0);
-                if (deltatouch.y < -(jumpForce*4))
+                if (deltatouch.y < -(jumpForce*3))
                     dir = new Vector2(0, 1);
                 if (deltatouch.y > (dashForce))
                     dir = new Vector2(0, -1);
@@ -160,6 +160,11 @@ public class Player : MonoBehaviour {
                     Dash(dir);
                 if (dir.y == 1)
                     Jump();
+            }else
+            {
+                //Throw
+                print(Input.mousePosition.x + " " + Screen.width);
+                Throw((Input.mousePosition.x > Screen.width/2) ? new Vector2(1, 0) : new Vector2(-1, 0));
             }
             swipemodeframes = 0;
         }

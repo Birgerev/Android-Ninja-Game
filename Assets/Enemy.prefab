@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   falling: 0
-  knockbackScale: 0.3
+  knockbackScale: 0.5
   dashScale: {x: 0.5, y: 0.25}
   forward: {x: 0, y: 0}
 --- !u!114 &114603864888334752

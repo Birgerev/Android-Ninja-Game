@@ -290,13 +290,13 @@ MonoBehaviour:
   weapon: {fileID: 1142331124478134, guid: cf5db1f72a5d4f44c8f81e45c137fd71, type: 2}
   jumpForce: 0.75
   jumpTimeInAir: 0.65
-  dashForce: 1.02
+  dashForce: 1.4
   dashing: 0
   knockbackScale: {x: 0.25, y: 0.4}
   falling: 0
   dashFriction: 0.55
   weaponAmount: 0
-  SwipeResistance: 2
+  SwipeResistance: 1
   swipemodeframes: 0
 --- !u!114 &114732314111307712
 MonoBehaviour:
