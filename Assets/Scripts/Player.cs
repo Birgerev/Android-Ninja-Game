@@ -114,7 +114,7 @@ public class Player : MonoBehaviour {
             }
         }
         
-        Controls();
+        //Controls();
 	}
 
     void Controls()
@@ -161,8 +161,10 @@ public class Player : MonoBehaviour {
 
     public void Dash(Vector2 dir)
     {
+        print("da");
         if (physics.grounded && !falling)
         {
+            print("dash " + dir);
             //Change Facing Direction
             facing = (dir.x < 0);
 
