@@ -38,4 +38,16 @@ public class MenuManager : MonoBehaviour {
 
         Manager.instance.Reset();
     }
+
+    public void Shop()
+    {
+        //Called by Button In 'menu' ui Section
+        anim.SetTrigger("Secondary");
+    }
+
+    public void Respawn()
+    {
+        //Called by Manager on Random
+        anim.SetTrigger("Secondary");
+    }
 }

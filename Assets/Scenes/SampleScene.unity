@@ -1388,9 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a5cd952780fa44490404067e46e584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 361317562}
-  game: {fileID: 584471682}
-  lose: {fileID: 1807242644}
+  anim: {fileID: 0}
 --- !u!95 &484913943
 Animator:
   serializedVersion: 3
@@ -1799,7 +1797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &537833510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1983,7 +1981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &584471683
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5097,6 +5095,7 @@ MonoBehaviour:
   UI: {fileID: 0}
   spawnEnemies: 0
   controllPlayer: 0
+  resetStats: 0
 --- !u!4 &1789016426
 Transform:
   m_ObjectHideFlags: 0
@@ -5153,7 +5152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1807242645
 RectTransform:
   m_ObjectHideFlags: 0

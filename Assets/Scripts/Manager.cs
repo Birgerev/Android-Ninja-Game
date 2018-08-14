@@ -15,6 +15,7 @@ public class Manager : MonoBehaviour {
 
     public bool spawnEnemies = false;
     public bool controllPlayer = false;
+    public bool resetStats = false;
 
     public static Manager instance;
 
@@ -37,6 +38,12 @@ public class Manager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (resetStats)
+        {
+            PlayerPrefs.DeleteAll();
+            resetStats = false;
+        }
+
         if (Application.targetFrameRate != targetFps)
             Application.targetFrameRate = targetFps;
 
@@ -45,6 +52,7 @@ public class Manager : MonoBehaviour {
         {
             highscore = score;
             PlayerPrefs.SetInt("highscore", highscore);
+            PlayerPrefs.Save();
         }
 
     }

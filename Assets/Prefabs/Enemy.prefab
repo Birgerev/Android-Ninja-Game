@@ -184,6 +184,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocitySpeed: 0.04
   position: {x: 0, y: 0, z: 0}
+  defaultZ: 0
   yDropoff: 0.97
   xDropoff: 0.8
 --- !u!212 &212723543766841916
