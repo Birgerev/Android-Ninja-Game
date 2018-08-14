@@ -152,7 +152,6 @@ public class Player : MonoBehaviour {
                 else
                 {
                     //Throw
-                    print(Input.mousePosition.x + " " + Screen.width);
                     Throw((Input.mousePosition.x > Screen.width / 2) ? new Vector2(1, 0) : new Vector2(-1, 0));
                 }
                 swipemodeframes = 0;
@@ -162,7 +161,7 @@ public class Player : MonoBehaviour {
 
     public void Dash(Vector2 dir)
     {
-        if (physics.grounded)
+        if (physics.grounded && !falling)
         {
             //Change Facing Direction
             facing = (dir.x < 0);
@@ -274,9 +273,12 @@ public class Player : MonoBehaviour {
     
     public void Knockback(Vector2 dir, Vector2 strength)
     {
-        falling = true;
-        fallingframes = 0;
-        physics.velocity = new Vector2(dir.x * strength.x, strength.y);
+        if (!dashing)
+        {
+            falling = true;
+            fallingframes = 0;
+            physics.velocity = new Vector2(dir.x * strength.x, strength.y);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
