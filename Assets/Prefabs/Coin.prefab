@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1970806273393148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.19, y: -4.42, z: 0}
+  m_LocalPosition: {x: 0.77308005, y: -4.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,7 +83,7 @@ MonoBehaviour:
   doGravity: 1
   gravityScale: 0.08
   grounded: 0
-  groundLevel: -3.67
+  groundLevel: -4.44
   xGround: 4.9375
   velocity: {x: 0, y: 0}
   velocitySpeed: 0.04

@@ -9,10 +9,13 @@ public class Enemy : MonoBehaviour {
     public float knockbackScale;
     public Vector2 dashScale;
     public Vector2 forward;
+    public GameObject coin;
 
     RigidbodyPixel rb;
     int triggerframes = 0;
     int fallframes = 0;
+
+    float health = 10;
 
     // Use this for initialization
     void Start () {
@@ -55,6 +58,27 @@ public class Enemy : MonoBehaviour {
     public void Kill(bool anim)
     {
         Destroy(gameObject);
+    }
+
+    public void Damage(float amount)
+    {
+        health -= amount;
+
+        print(health);
+
+        if (health <= 0)
+        {
+            Kill(true);
+
+            dropCoin(transform.position);
+        }
+    }
+
+    public void dropCoin(Vector2 pos)
+    {
+        GameObject obj = Instantiate(coin);
+        obj.transform.position = pos;
+        obj.name = "coin";
     }
 
     void OnTriggerEnter2D(Collider2D col)

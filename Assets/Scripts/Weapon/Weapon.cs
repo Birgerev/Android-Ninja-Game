@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour {
     public float cooldown;
     public int maxAmount;
     public float recharge;
+    public float damage;
 
     public int despawnAge = 75;
 
@@ -30,6 +31,7 @@ public class Weapon : MonoBehaviour {
             {
                 col.GetComponent<Enemy>().Knockback(direction, 
                     new Vector2(col.GetComponent<Enemy>().knockbackScale, col.GetComponent<Enemy>().knockbackScale));
+                col.GetComponent<Enemy>().Damage(damage);
 
                 Destroy(gameObject);
             }

@@ -16,7 +16,6 @@ public class CoinAmountText : MonoBehaviour {
         {
             yield return new WaitForSeconds(0.2f);
             GetComponent<Text>().text = "" + Manager.instance.coins;
-            print(Manager.instance.coins);
         }
     }
 }

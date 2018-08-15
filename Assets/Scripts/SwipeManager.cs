@@ -25,8 +25,7 @@ public class SwipeManager : MonoBehaviour {
             Vector2 result = Vector2.zero;
 
             lastTouch = Vector3.zero;
-
-            print(deltaTouch);
+            
             //results are inverted
             if (deltaTouch.x > minRadius)
                 result = new Vector2(-1, 0);
@@ -49,7 +48,6 @@ public class SwipeManager : MonoBehaviour {
 
     public void Swipe(Vector3 dir)
     {
-        print("swipe " + dir);
         if(dir.y == 0)
             player.Dash(dir);
         else if(dir.y == 1)
