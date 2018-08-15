@@ -6,6 +6,18 @@ public class Manager : MonoBehaviour {
 
     public bool LockFpsSecure = true;
     public int targetFps = 30;
+    
+    public int coins    //Use PlayerPrefs As A Variable Which also means coins value will be 
+    {                   //saved between sessions.
+        get
+        {
+            return PlayerPrefs.GetInt("coins", 0);
+        }
+        set
+        {
+            PlayerPrefs.SetInt("coins", value);
+        }
+    }
 
     public int score = 30;
     public int highscore = 30;
