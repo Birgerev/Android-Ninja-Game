@@ -25,6 +25,7 @@ public class EnemySpawner : MonoBehaviour {
             if (Manager.instance.spawnEnemies)
             {
                 //Spawn Logic
+
                 GameObject spawnpoint = spawnpoints[Random.Range(0, spawnpoints.Length)];
 
                 Vector2 direction = new Vector2((spawnpoint.transform.position.x < 0) ? 1 : -1, 0);

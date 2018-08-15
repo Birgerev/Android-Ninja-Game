@@ -10,7 +10,9 @@ public class Enemy : MonoBehaviour {
     public Vector2 dashScale;
     public Vector2 forward;
     public GameObject coin;
+    public int enemyLevel = 0;
 
+    Animator anim;
     RigidbodyPixel rb;
     int triggerframes = 0;
     int fallframes = 0;
@@ -19,7 +21,8 @@ public class Enemy : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        rb = transform.GetComponent<RigidbodyPixel>();
+        rb = GetComponent<RigidbodyPixel>();
+        anim = GetComponent<Animator>();
         StartCoroutine(Run());
 	}
 	
@@ -34,7 +37,7 @@ public class Enemy : MonoBehaviour {
             if (rb.grounded)
                 falling = false;
         
-        Run();
+        //Run();
     }
 
     IEnumerator Run()
@@ -42,7 +45,7 @@ public class Enemy : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(0.05f);
-            if (rb.grounded && !falling && rb.velocity.y == 0)
+            if ((rb.grounded && !falling && rb.velocity.y == 0) || !rb.doGravity)
             {
                 rb.velocity = new Vector2(speed * forward.x, rb.velocity.y);
             }

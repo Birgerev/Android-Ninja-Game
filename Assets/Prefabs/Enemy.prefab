@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114603864888334752}
   - component: {fileID: 114163201027202308}
   - component: {fileID: 50076679277226064}
+  - component: {fileID: 95195896533276766}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1007177942081514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.335, y: -3.671, z: 0}
+  m_LocalPosition: {x: -9.66, y: -1.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4499411277857826}
@@ -147,6 +148,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.43, y: 1.375}
   m_EdgeRadius: 0
+--- !u!95 &95195896533276766
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1007177942081514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114163201027202308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,7 +182,8 @@ MonoBehaviour:
   knockbackScale: 0.5
   dashScale: {x: 0.5, y: 0.25}
   forward: {x: 0, y: 0}
-  coin: {fileID: 1970806273393148, guid: 9ee65d145a26fbd49b79496e2d30546c, type: 2}
+  coin: {fileID: 1118520914600748, guid: 02af5655456267848888eadc931cceb4, type: 2}
+  enemyLevel: 0
 --- !u!114 &114603864888334752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pixelSize: 0.0625
   simulate: 1
-  doGravity: 1
+  doGravity: 0
   gravityScale: 0.08
   grounded: 0
   groundLevel: -3.67
@@ -222,8 +242,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -9
-  m_Sprite: {fileID: 21300000, guid: d769d5b57e87a5a43af314b9b0edb7e1, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300034, guid: d769d5b57e87a5a43af314b9b0edb7e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
