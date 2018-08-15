@@ -7,7 +7,7 @@ public class SwipeManager : MonoBehaviour {
     public float minRadius = 100f;
 
     public Player player;
-    private Vector3 lastTouch;
+    public Vector3 lastTouch;
     
 	void Start () {
         player = GetComponent<Player>();
@@ -24,6 +24,8 @@ public class SwipeManager : MonoBehaviour {
             Vector3 deltaTouch = lastTouch - Input.mousePosition;
             Vector2 result = Vector2.zero;
 
+            lastTouch = Vector3.zero;
+
             print(deltaTouch);
             //results are inverted
             if (deltaTouch.x > minRadius)
@@ -35,8 +37,13 @@ public class SwipeManager : MonoBehaviour {
             if (deltaTouch.y < -minRadius)
                 result = new Vector2(0, 1);
 
-            if (result != Vector2.zero)
+            if (result == Vector2.zero)
+            {
+                player.Throw();
+            }else
+            {
                 Swipe(result);
+            }
         }
     }
 
