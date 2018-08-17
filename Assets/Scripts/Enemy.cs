@@ -31,6 +31,8 @@ public class Enemy : MonoBehaviour {
         triggerframes++;
         fallframes++;
 
+        anim.SetInteger("level", enemyLevel);
+
         transform.GetComponent<SpriteRenderer>().flipX = (forward.x < 0) ? true : false;
 
         if (fallframes > 4)
