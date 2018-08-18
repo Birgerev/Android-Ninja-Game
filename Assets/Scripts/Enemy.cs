@@ -44,7 +44,6 @@ public class Enemy : MonoBehaviour {
                 if (enemyLevel == 1)
                 {
                     anim.SetBool("action", false);
-                    print("disabled");
                 }
             }
 
@@ -112,9 +111,7 @@ public class Enemy : MonoBehaviour {
     public void Damage(float amount)
     {
         health -= amount;
-
-        print(health);
-
+        
         if (health <= 0)
         {
             Kill(true);
@@ -129,9 +126,7 @@ public class Enemy : MonoBehaviour {
         {
             //Animation
             anim.SetBool("action", true);
-
-            print("jump");
-
+            
             rb.velocity += new Vector2(0, jumpForce);
         }
     }

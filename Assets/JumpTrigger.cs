@@ -9,7 +9,7 @@ public class JumpTrigger : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
         Enemy enemy = col.GetComponent<Enemy>();
-        if (enemy != null)
+        if (enemy != null && !enemy.GetComponent<RigidbodyPixel>().doGravity)
         {
             RigidbodyPixel rb = enemy.GetComponent<RigidbodyPixel>();
             rb.doGravity = true;

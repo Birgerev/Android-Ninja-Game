@@ -8,6 +8,13 @@ public class EnemySpawner : MonoBehaviour {
     public float loopSpeed;
     public GameObject[] spawnpoints;
 
+    public Dictionary<int, int> levelsatscore = new Dictionary<int, int>()
+    {
+        { 0, 0},
+        { 1, 5},
+        //{ 2, 100}
+    };
+
     // Use this for initialization
     void Start () {
         StartCoroutine(loop());
@@ -24,7 +31,16 @@ public class EnemySpawner : MonoBehaviour {
         {
             if (Manager.instance.spawnEnemies)
             {
+                int maxlevel = 0;
+                foreach (KeyValuePair<int, int> entry in levelsatscore)
+                {
+                    if (entry.Value <= Manager.instance.score)
+                    {
+                        maxlevel = entry.Key;
+                    }
+                }
                 //Spawn Logic
+                int level = Random.Range(0, maxlevel+1);
 
                 GameObject spawnpoint = spawnpoints[Random.Range(0, spawnpoints.Length)];
 
@@ -33,6 +49,7 @@ public class EnemySpawner : MonoBehaviour {
                 GameObject obj = Instantiate(enemy);
                 obj.transform.position = spawnpoint.transform.position;
                 obj.GetComponent<Enemy>().forward = direction;
+                obj.GetComponent<Enemy>().enemyLevel = level;
 
                 //Wait For Next Iteration
                 yield return new WaitForSeconds(loopSpeed);

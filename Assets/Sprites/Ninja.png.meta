@@ -29,10 +29,10 @@ TextureImporter:
     21300048: Enemy2_walk0
     21300050: Enemy2_walk1
     21300052: Enemy2_walk2
-    21300054: Ninja_27
+    21300054: Enemy2_walk_lift1
     21300056: Enemy3_walk0
     21300058: Ninja_falling
-    21300060: Enemy2_walk3
+    21300060: Enemy2_walk_lift0
     21300062: Enemy3_walk1
     21300064: Enemy3_walk2
     21300066: Enemy3_walk3
@@ -41,6 +41,13 @@ TextureImporter:
     21300072: Enemy1_jump2
     21300074: Enemy1_jump3
     21300076: Enemy1_jump4
+    21300078: Ninja_0
+    21300080: Ninja_1
+    21300082: Enemy2_walk_lift2
+    21300084: Enemy2_throw0
+    21300086: Enemy2_throw1
+    21300088: Enemy2_throw2
+    21300090: Enemy2_throw3
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -683,11 +690,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_27
+      name: Enemy2_walk_lift1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
+        x: 32
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -743,10 +750,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy2_walk3
+      name: Enemy2_walk_lift0
       rect:
         serializedVersion: 2
-        x: 96
+        x: 0
         y: 160
         width: 32
         height: 32
@@ -918,6 +925,146 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c93bbba6c365fe34a9d46335bf6ada99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja_0
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed6c9b1d790318409e2d3cb6c8720f2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba87b95341da8247aa783a864d3a96e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy2_walk_lift2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e26ba7ea18b3b40b292865cc505628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy2_throw0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e557c8a022864b5439665345a53c20a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy2_throw1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3ef7520c4546c48aca7de66b205804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy2_throw2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12a8af267b064e4aaf8f30e92cf198b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy2_throw3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f0eb8ba6c36404d894a30e43ef1127
       vertices: []
       indices: 
       edges: []
