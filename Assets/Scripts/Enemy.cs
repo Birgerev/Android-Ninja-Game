@@ -158,6 +158,8 @@ public class Enemy : MonoBehaviour {
                 Vector2 dir = new Vector2((transform.position.x - col.transform.position.x > 0) ? 1 : -1, 0);
                 Knockback(dir, dashScale);
                 triggerframes = 0;
+
+                CameraManager.instance.Shake();
             }
         }
 

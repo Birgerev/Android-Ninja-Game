@@ -27,6 +27,8 @@ public class Weapon : MonoBehaviour {
 
         if (owner != col.gameObject)
         {
+            CameraManager.instance.Shake();
+
             if (col.GetComponent<Enemy>() != null)
             {
                 col.GetComponent<Enemy>().Knockback(direction, 

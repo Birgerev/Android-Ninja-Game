@@ -256,6 +256,9 @@ public class Player : MonoBehaviour {
             physics.velocity = new Vector2(dir.x * strength.x, strength.y);
             anim.SetBool("Falling", true);
             anim.SetBool("Disoriented", true);
+
+            CameraManager.instance.Shake();
+            CameraManager.instance.Flash();
         }
     }
 
