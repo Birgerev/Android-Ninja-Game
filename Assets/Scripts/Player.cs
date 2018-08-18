@@ -131,10 +131,8 @@ public class Player : MonoBehaviour {
 
     public void Dash(Vector2 dir)
     {
-        print("da");
         if (physics.grounded && !falling)
         {
-            print("dash " + dir);
             //Change Facing Direction
             facing = (dir.x < 0);
 
@@ -152,7 +150,6 @@ public class Player : MonoBehaviour {
         if (physics.grounded)
         {
             //Animation
-            anim.SetTrigger("Jump");
 
             physics.velocity += new Vector2(0, jumpForce);
             StartCoroutine(jump());

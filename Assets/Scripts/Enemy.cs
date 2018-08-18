@@ -37,12 +37,15 @@ public class Enemy : MonoBehaviour {
         transform.GetComponent<SpriteRenderer>().flipX = (forward.x < 0) ? true : false;
 
         if (fallframes > 4)
-            if (rb.grounded)
+            if (rb.grounded && falling)
             {
                 falling = false;
 
-                if(enemyLevel == 1)
+                if (enemyLevel == 1)
+                {
                     anim.SetBool("action", false);
+                    print("disabled");
+                }
             }
 
         //Run();
