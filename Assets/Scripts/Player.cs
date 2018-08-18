@@ -70,7 +70,10 @@ public class Player : MonoBehaviour {
         anim.SetBool("Dashing", dashing);
         anim.SetBool("Grounded", physics.grounded);
         if (anim.GetBool("Falling") && physics.grounded)
+        {
             anim.SetBool("Falling", false);
+            anim.SetBool("Disoriented", false);
+        }
 
 
         //Set Flip X in spriteRenderer
@@ -254,6 +257,8 @@ public class Player : MonoBehaviour {
             falling = true;
             fallingframes = 0;
             physics.velocity = new Vector2(dir.x * strength.x, strength.y);
+            anim.SetBool("Falling", true);
+            anim.SetBool("Disoriented", true);
         }
     }
 

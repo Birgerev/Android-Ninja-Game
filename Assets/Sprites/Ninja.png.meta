@@ -2,36 +2,45 @@ fileFormatVersion: 2
 guid: d769d5b57e87a5a43af314b9b0edb7e1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Ninja_0
-    21300002: Ninja_1
-    21300004: Ninja_2
-    21300006: Ninja_3
-    21300008: Ninja_4
-    21300010: Ninja_5
-    21300012: Ninja_6
-    21300014: Ninja_7
-    21300016: Ninja_8
-    21300018: Ninja_9
-    21300020: Ninja_10
-    21300022: Ninja_11
-    21300024: Ninja_12
-    21300026: Ninja_13
-    21300028: Ninja_14
-    21300030: Ninja_15
-    21300032: Ninja_16
-    21300034: Ninja_17
-    21300036: Ninja_18
-    21300038: Ninja_19
-    21300040: Ninja_20
-    21300042: Ninja_21
-    21300044: Ninja_22
+    21300000: Ninja_idle0
+    21300002: Ninja_idle1
+    21300004: Ninja_kick
+    21300006: Ninja_throw0
+    21300008: Ninja_throw1
+    21300010: Ninja_throw2
+    21300012: Ninja_throw3
+    21300014: Ninja_jump0
+    21300016: Ninja_jump1
+    21300018: Ninja_jump2
+    21300020: Ninja_jump3
+    21300022: Ninja_jump4
+    21300024: Ninja_jump5
+    21300026: Ninja_throw_air0
+    21300028: Ninja_throw_air1
+    21300030: Enemy0_walk0
+    21300032: Enemy0_walk1
+    21300034: Enemy0_walk2
+    21300036: Enemy0_walk3
+    21300038: Enemy1_walk0
+    21300040: Enemy1_walk1
+    21300042: Enemy1_walk2
+    21300044: Enemy1_walk3
     21300046: Ninja_23
-    21300048: Ninja_24
-    21300050: Ninja_25
-    21300052: Ninja_26
+    21300048: Enemy2_walk0
+    21300050: Enemy2_walk1
+    21300052: Enemy2_walk2
     21300054: Ninja_27
-    21300056: Ninja_28
-    21300058: Ninja_29
+    21300056: Enemy3_walk0
+    21300058: Ninja_falling
+    21300060: Enemy2_walk3
+    21300062: Enemy3_walk1
+    21300064: Enemy3_walk2
+    21300066: Enemy3_walk3
+    21300068: Enemy1_jump0
+    21300070: Enemy1_jump1
+    21300072: Enemy1_jump2
+    21300074: Enemy1_jump3
+    21300076: Enemy1_jump4
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -134,7 +143,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ninja_0
+      name: Ninja_idle0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_1
+      name: Ninja_idle1
       rect:
         serializedVersion: 2
         x: 32
@@ -174,7 +183,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_2
+      name: Ninja_kick
       rect:
         serializedVersion: 2
         x: 0
@@ -194,7 +203,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_3
+      name: Ninja_throw0
       rect:
         serializedVersion: 2
         x: 0
@@ -214,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_4
+      name: Ninja_throw1
       rect:
         serializedVersion: 2
         x: 32
@@ -234,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_5
+      name: Ninja_throw2
       rect:
         serializedVersion: 2
         x: 64
@@ -254,7 +263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_6
+      name: Ninja_throw3
       rect:
         serializedVersion: 2
         x: 96
@@ -274,7 +283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_7
+      name: Ninja_jump0
       rect:
         serializedVersion: 2
         x: 0
@@ -294,7 +303,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_8
+      name: Ninja_jump1
       rect:
         serializedVersion: 2
         x: 32
@@ -314,7 +323,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_9
+      name: Ninja_jump2
       rect:
         serializedVersion: 2
         x: 64
@@ -334,7 +343,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_10
+      name: Ninja_jump3
       rect:
         serializedVersion: 2
         x: 96
@@ -354,7 +363,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_11
+      name: Ninja_jump4
       rect:
         serializedVersion: 2
         x: 128
@@ -374,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_12
+      name: Ninja_jump5
       rect:
         serializedVersion: 2
         x: 160
@@ -394,7 +403,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_13
+      name: Ninja_throw_air0
       rect:
         serializedVersion: 2
         x: 0
@@ -414,7 +423,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_14
+      name: Ninja_throw_air1
       rect:
         serializedVersion: 2
         x: 32
@@ -434,7 +443,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_15
+      name: Enemy0_walk0
       rect:
         serializedVersion: 2
         x: 0
@@ -454,7 +463,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_16
+      name: Enemy0_walk1
       rect:
         serializedVersion: 2
         x: 32
@@ -474,7 +483,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_17
+      name: Enemy0_walk2
       rect:
         serializedVersion: 2
         x: 64
@@ -494,7 +503,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_18
+      name: Enemy0_walk3
       rect:
         serializedVersion: 2
         x: 96
@@ -514,7 +523,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_19
+      name: Enemy1_walk0
       rect:
         serializedVersion: 2
         x: 0
@@ -534,7 +543,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_20
+      name: Enemy1_walk1
       rect:
         serializedVersion: 2
         x: 32
@@ -554,7 +563,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_21
+      name: Enemy1_walk2
       rect:
         serializedVersion: 2
         x: 64
@@ -574,7 +583,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_22
+      name: Enemy1_walk3
       rect:
         serializedVersion: 2
         x: 96
@@ -614,7 +623,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_24
+      name: Enemy2_walk0
       rect:
         serializedVersion: 2
         x: 0
@@ -634,10 +643,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_25
+      name: Enemy2_walk1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 33
         y: 160
         width: 32
         height: 32
@@ -654,7 +663,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_26
+      name: Enemy2_walk2
       rect:
         serializedVersion: 2
         x: 64
@@ -694,7 +703,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_28
+      name: Enemy3_walk0
       rect:
         serializedVersion: 2
         x: 0
@@ -714,7 +723,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_29
+      name: Ninja_falling
       rect:
         serializedVersion: 2
         x: 0
@@ -729,6 +738,186 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 09a50302ece4a8d40a204614fcd20130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy2_walk3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5a70e8cd87c554db28cb783d06ddf2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy3_walk1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee45b1f75166fb4089cb7b1441a253b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy3_walk2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13edbb6fc92b52439f00c3b14637014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy3_walk3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e43b497be858bd43bc7fda8ff9000b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_jump0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f34600601794c49b9c0428e314c5e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_jump1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a053a0acab94cad43a8e354323fd9c15
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_jump2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3a07fa201d96e449597a31c5c5bfc6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_jump3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae3365bc92a8df4bae8c393525c507d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_jump4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93bbba6c365fe34a9d46335bf6ada99
       vertices: []
       indices: 
       edges: []

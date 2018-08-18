@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour {
     public Vector2 forward;
     public GameObject coin;
     public int enemyLevel = 0;
+    public float jumpForce = 0.75f;
 
     Animator anim;
     RigidbodyPixel rb;
@@ -24,6 +25,7 @@ public class Enemy : MonoBehaviour {
         rb = GetComponent<RigidbodyPixel>();
         anim = GetComponent<Animator>();
         StartCoroutine(Run());
+        StartCoroutine(Actionloop());
 	}
 	
 	// Update is called once per frame
@@ -32,14 +34,53 @@ public class Enemy : MonoBehaviour {
         fallframes++;
 
         anim.SetInteger("level", enemyLevel);
-
         transform.GetComponent<SpriteRenderer>().flipX = (forward.x < 0) ? true : false;
 
         if (fallframes > 4)
             if (rb.grounded)
+            {
                 falling = false;
-        
+
+                if(enemyLevel == 1)
+                    anim.SetBool("action", false);
+            }
+
         //Run();
+    }
+
+    public void action()
+    {
+        if (enemyLevel == 0)
+        {
+
+        }
+        else if (enemyLevel == 1)
+        {
+            Jump();
+        }
+        else if (enemyLevel == 2)
+        {
+
+        }
+        else if (enemyLevel == 3)
+        {
+
+        }
+    }
+
+    IEnumerator Actionloop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.25f);
+            if ((rb.grounded && !falling && rb.velocity.y == 0))
+            {
+                if(Random.Range(0, 10) > 8)
+                {
+                    action();
+                }
+            }
+        }
     }
 
     IEnumerator Run()
@@ -76,6 +117,19 @@ public class Enemy : MonoBehaviour {
             Kill(true);
 
             dropCoin(transform.position);
+        }
+    }
+
+    public void Jump()
+    {
+        if (rb.grounded)
+        {
+            //Animation
+            anim.SetBool("action", true);
+
+            print("jump");
+
+            rb.velocity += new Vector2(0, jumpForce);
         }
     }
 
