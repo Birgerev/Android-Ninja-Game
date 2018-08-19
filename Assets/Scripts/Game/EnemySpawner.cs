@@ -5,14 +5,20 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
     public GameObject enemy;
-    public float loopSpeed;
     public GameObject[] spawnpoints;
 
     public Dictionary<int, int> levelsatscore = new Dictionary<int, int>()
     {
         { 0, 0},
-        { 1, 5},
-        //{ 2, 100}
+        { 1, 20},
+    };
+
+    public Dictionary<float, int> speedatscore = new Dictionary<float, int>()
+    {
+        { 1.5f, 0},
+        { 1.2f, 20},
+        { 1f, 50},
+        { 0.8f, 100},
     };
 
     // Use this for initialization
@@ -52,6 +58,14 @@ public class EnemySpawner : MonoBehaviour {
                 obj.GetComponent<Enemy>().enemyLevel = level;
 
                 //Wait For Next Iteration
+                float loopSpeed = 2;
+                foreach (KeyValuePair<float, int> entry in speedatscore)
+                {
+                    if (entry.Value <= Manager.instance.score)
+                    {
+                        loopSpeed = entry.Key;
+                    }
+                }
                 yield return new WaitForSeconds(loopSpeed);
             }
             else yield return new WaitForSeconds(0.1f);    //As To Not Crash The Game

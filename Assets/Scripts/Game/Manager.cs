@@ -69,11 +69,31 @@ public class Manager : MonoBehaviour {
 
     }
 
+    public void Respawn()
+    {
+        //Called By Admanager after an ad has been watched
+        Instantiate(PlayerPrefab);
+        KillEnemies();
+
+        Manager.instance.controllPlayer = true;
+        spawnEnemies = true;
+
+        UI.RespawnToGame();
+    }
+
     public void Lose()
     {
         Manager.instance.controllPlayer = false;
         spawnEnemies = false;
-        UI.Lose();
+
+        if (Random.Range(0, 2) < 1 && AdManager.instance.isAdvertAvailable())
+        {
+            UI.Respawn();
+        }
+        else
+        {
+            UI.Lose();
+        }
     }
 
     public void Reset()
@@ -89,6 +109,8 @@ public class Manager : MonoBehaviour {
     {
         Manager.instance.controllPlayer = true;
         spawnEnemies = true;
+
+        AdManager.instance.loadAd();
     }
 
     public void KillEnemies()

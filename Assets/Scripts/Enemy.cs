@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour {
             yield return new WaitForSeconds(0.25f);
             if ((rb.grounded && !falling && rb.velocity.y == 0))
             {
-                if(Random.Range(0, 10) > 8)
+                if(Random.Range(0, 10) > 7)
                 {
                     action();
                 }

@@ -50,4 +50,22 @@ public class MenuManager : MonoBehaviour {
         //Called by Manager on Random
         anim.SetTrigger("Secondary");
     }
+
+    public void RespawnToGame()
+    {
+        //Called by Manager
+        anim.SetTrigger("Secondary");
+    }
+
+    public void WatchAd()
+    {
+        //Called by UI button 'Accept'
+        AdManager.instance.playAd();
+    }
+
+    public void CancelRespawn()
+    {
+        //Called by UI button 'Cancel'
+        anim.SetTrigger("Next");
+    }
 }
