@@ -78,9 +78,12 @@ public class Player : MonoBehaviour {
 
         //Set Flip X in spriteRenderer
         transform.GetComponent<SpriteRenderer>().flipX = facing;
+        transform.Find("belt").GetComponent<SpriteRenderer>().flipX = facing;
+
+        transform.Find("belt").GetComponent<SpriteRenderer>().color = BeltManager.color;
 
         //Fixes knockback friction bug
-        if(falling && physics.grounded && fallingframes > 5)
+        if (falling && physics.grounded && fallingframes > 5)
         {
             falling = false;
             fallingframes = 0;

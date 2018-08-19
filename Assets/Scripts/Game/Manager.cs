@@ -22,6 +22,7 @@ public class Manager : MonoBehaviour {
     public int score = 30;
     public int highscore = 30;
     public GameObject PlayerPrefab;
+    public GameObject effectPrefab;
 
     public MenuManager UI;
 
@@ -119,5 +120,13 @@ public class Manager : MonoBehaviour {
         {
             enemy.GetComponent<Enemy>().Kill(true);
         }
+    }
+
+    public void Effect(int id, Vector2 pos)
+    {
+        GameObject obj = Instantiate(effectPrefab);
+
+        obj.transform.position = pos;
+        obj.GetComponent<Effect>().animationId = id;
     }
 }

@@ -14,16 +14,6 @@ public class AdScript : MonoBehaviour
         RequestInterstitialAds();
     }
 
-
-
-    public void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 300, 200, 200), "Click"))
-        {
-            showInterstitialAd();
-        }
-    }
-
     public void showInterstitialAd()
     {
         //Show Ad

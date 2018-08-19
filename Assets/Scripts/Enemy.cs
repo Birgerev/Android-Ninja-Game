@@ -105,6 +105,8 @@ public class Enemy : MonoBehaviour {
     
     public void Kill(bool anim)
     {
+        if (anim)
+            Manager.instance.Effect(0, transform.position);
         Destroy(gameObject);
     }
 

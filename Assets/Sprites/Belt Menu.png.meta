@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-guid: 5a9b8bbd2c5b2d949a720349cc57c133
+guid: b65129ddfdbefdf408c15b2f8485c01c
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Houses_0
-    21300002: Houses_1
-    21300004: Houses_2
-    21300006: Houses_3
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -42,12 +38,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,91 +102,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Houses_0
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 432
-        width: 103
-        height: 75
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13fe05dfcda60bc4c98c740458b356d0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Houses_1
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 495
-        width: 23
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00ea3dd4bd3ca6f43bec07587b2cf1ba
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Houses_2
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 450
-        width: 134
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd73b60a85c22264aad73da2e413e362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Houses_3
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 489
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 574007536cea6d84aa6980bfae8504ba
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d3f098e12ecf1ea45992574597a441af
+    spriteID: 3a82bd2f09939f84a87595f405801392
     vertices: []
     indices: 
     edges: []
