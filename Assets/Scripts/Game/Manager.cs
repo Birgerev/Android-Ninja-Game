@@ -86,15 +86,15 @@ public class Manager : MonoBehaviour {
     {
         Manager.instance.controllPlayer = false;
         spawnEnemies = false;
-
-        if (Random.Range(0, 2) < 1 && AdManager.instance.isAdvertAvailable())
+        //Will Throw An Error On PC        
+        if (Manager.instance.score > 20)
         {
             UI.Respawn();
+            return;
         }
-        else
-        {
-            UI.Lose();
-        }
+
+        UI.Lose();
+
     }
 
     public void Reset()

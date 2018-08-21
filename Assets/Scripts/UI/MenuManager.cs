@@ -28,6 +28,7 @@ public class MenuManager : MonoBehaviour {
     public void Lose()
     {
         //Called by Manager
+        print("lost");
         anim.SetTrigger("Next");
     }
 
