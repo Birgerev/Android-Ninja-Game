@@ -88,7 +88,7 @@ public class Manager : MonoBehaviour {
         spawnEnemies = false;
 
         //Every 2 out of 3 times
-        if (Random.Range(0, 1) < 2 && AdManager.instance.isAdvertAvailable())
+        if (Random.Range(0, 1) < 1 && AdManager.instance.isAdvertAvailable())
         {
             UI.Respawn();
         }
