@@ -1,66 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GoogleMobileAds.Api;
 
 public class AdManager : MonoBehaviour
 {
     public static AdManager instance;
+    
+    private string adUnitInterstitialId = "ca-app-pub-6282622427267773/1879202231";
+    private string appId = "ca-app-pub-6282622427267773~6729926430";
 
-    string appID = "";
-    string iosAppID = "ios_app_id";
-    string androidAppID = "5b78528a1c1d32055a2bdd06";
-    string windowsAppID = "windows_app_id";
+    private RewardBasedVideoAd rewardBasedVideo;
 
-    string[] placements = new string[] { "REVIVE-6595526" };
-
-    void Start()
+    private void Start()
     {
         instance = this;
 
-        appID = androidAppID;
-        Vungle.init(androidAppID, placements);
+        //MobileAds.Initialize(appId);
+        this.rewardBasedVideo = RewardBasedVideoAd.Instance;
         loadAd();
     }
 
-    public void playAd()
+    public static void loadBanner()
     {
-        //Will Throw an error on PC
-        try { 
-            Vungle.playAd(placements[0]);
-
-            Vungle.onAdFinishedEvent += (placementID, adPlayable) => {
-                HandleOnAdRewarded();
-            };
-        }
-        catch (System.Exception e)
-        {
-
-        }
     }
 
     public void loadAd()
     {
-        //Will Throw an error on PC
-        try
-        {
-            Vungle.loadAd(placements[0]);
-        }
-        catch (System.Exception e)
-        {
+        AdRequest request = new AdRequest.Builder().Build();
 
-        }
-        //Vungle.playAdWithOptions(new Dictionary<string, object>() { { "orientation", 6 } });
+        this.rewardBasedVideo.LoadAd(request, adUnitInterstitialId);
+        rewardBasedVideo.OnAdRewarded += HandleOnAdRewarded;
+    }
+
+    public void playAd()
+    {
+        this.rewardBasedVideo.Show();
     }
 
     public bool isAdvertAvailable()
     {
-        //Will Throw an error on PC
-        if(Application.isMobilePlatform )
-            return Vungle.isAdvertAvailable(placements[0]);
-        return true;
+        return rewardBasedVideo.IsLoaded();
     }
 
-    public void HandleOnAdRewarded()
+    public void HandleOnAdRewarded(object sender, Reward args)
     {
         MonoBehaviour.print("HandleAdLoaded event received");
 

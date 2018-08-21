@@ -116,6 +116,7 @@ public class Enemy : MonoBehaviour {
         
         if (health <= 0)
         {
+            Manager.instance.score++;
             Kill(true);
 
             dropCoin(transform.position);
