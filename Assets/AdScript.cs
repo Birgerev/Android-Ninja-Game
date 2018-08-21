@@ -1,38 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
-using GoogleMobileAds.Api;
 
 public class AdScript : MonoBehaviour
 {
-
+    /*
     bool hasShownAdOneTime;
 
     // Use this for initialization
     void Start()
     {
         //Request Ad
-        RequestInterstitialAds();
+        //RequestInterstitialAds();
     }
 
     public void showInterstitialAd()
     {
         //Show Ad
-        if (interstitial.IsLoaded())
-        {
-            interstitial.Show();
+
+        interstitial.Show();
 
             //Stop Sound
             //
 
             Debug.Log("SHOW AD XXX");
-        }
 
     }
 
     InterstitialAd interstitial;
-    private void RequestInterstitialAds()
+    public void RequestInterstitialAds()
     {
-        string adID = "ca-app-pub-3940256099942544/1033173712";
+        string adID = "ca-app-pub-6282622427267773/1879202231";
 
 #if UNITY_ANDROID
         string adUnitId = adID;
@@ -51,11 +48,13 @@ public class AdScript : MonoBehaviour
        .AddTestDevice("2077ef9a63d2b398840261c8221a0c9b")  // My test device.
        .Build();
 
+
         //***Production***
         //AdRequest request = new AdRequest.Builder().Build();
 
         //Register Ad Close Event
-        interstitial.OnAdClosed += Interstitial_OnAdClosed;
+        
+        interstitial.OnAdLoaded += Interstitial_OnAdClosed;
 
         // Load the interstitial with the request.
         interstitial.LoadAd(request);
@@ -68,6 +67,8 @@ public class AdScript : MonoBehaviour
     private void Interstitial_OnAdClosed(object sender, System.EventArgs e)
     {
         //Resume Play Sound
+        //if (interstitial.IsLoaded())
+            GameObject.Find("UI").SetActive(false);
 
-    }
+    }*/
 }
