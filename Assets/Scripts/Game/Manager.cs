@@ -94,7 +94,6 @@ public class Manager : MonoBehaviour {
         }
 
         UI.Lose();
-
     }
 
     public void Reset()
