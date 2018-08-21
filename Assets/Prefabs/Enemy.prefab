@@ -212,8 +212,8 @@ MonoBehaviour:
   knockbackScale: 0.5
   dashScale: {x: 0.5, y: 0.25}
   forward: {x: 0, y: 0}
-  coin: {fileID: 0}
-  enemyLevel: 0
+  coin: {fileID: 1118520914600748, guid: 02af5655456267848888eadc931cceb4, type: 2}
+  enemyLevel: 2
   jumpForce: 0.75
 --- !u!114 &114603864888334752
 MonoBehaviour:
