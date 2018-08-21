@@ -31,9 +31,9 @@ public class SwipeManager : MonoBehaviour {
                 result = new Vector2(-1, 0);
             if (deltaTouch.x < -minRadius)
                 result = new Vector2(1, 0);
-            if (deltaTouch.y > minRadius)
+            if (deltaTouch.y > minRadius * 4)
                 result = new Vector2(0, -1);
-            if (deltaTouch.y < -minRadius)
+            if (deltaTouch.y < -minRadius*4)
                 result = new Vector2(0, 1);
 
             if (result == Vector2.zero)

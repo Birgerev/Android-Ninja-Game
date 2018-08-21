@@ -7,6 +7,8 @@ public class MenuManager : MonoBehaviour {
 
     public Animator anim;
 
+    public bool shop;
+
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
@@ -42,7 +44,16 @@ public class MenuManager : MonoBehaviour {
     public void Shop()
     {
         //Called by Button In 'menu' ui Section
-        anim.SetTrigger("Secondary");
+        if (shop)
+        {
+            anim.SetTrigger("Next");
+        }
+        else
+        {
+            anim.SetTrigger("Secondary");
+        }
+
+        shop = !shop;
     }
 
     public void Respawn()
