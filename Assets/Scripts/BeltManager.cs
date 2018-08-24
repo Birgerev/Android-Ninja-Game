@@ -8,13 +8,28 @@ public class BeltManager : MonoBehaviour {
 
     public Color[] colors;
     public int[] highscoreForUnlock;
-    public int selectedColor;
+
+    int Selected = 0;
+    public int selectedColor
+    {                   //saved between sessions.
+        get
+        {
+            return Selected;
+        }
+
+        set
+        {
+            PlayerPrefs.SetInt("selectedBelt", value);
+            Selected = value;
+        }
+    }
 
     public static BeltManager instance;
 
     // Use this for initialization
     void Start () {
         instance = this;
+        Selected = PlayerPrefs.GetInt("selectedBelt");
     }
 	
 	// Update is called once per frame
