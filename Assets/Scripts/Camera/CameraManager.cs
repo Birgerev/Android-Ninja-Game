@@ -12,15 +12,15 @@ public class CameraManager : MonoBehaviour {
 
     public float maxRoll = 10;
     public float maxOffset = 0.5f;
-    float shake = 0;
+    public float shake = 0;
     public float shakedropoffPerFrame = 0.8f;
     public float shakeforce = 1.5f;
 
     public GameObject flash;
 
-    float roll;
-    float offsetX;
-    float offsetY;
+    public float roll;
+    public float offsetX;
+    public float offsetY;
 
     int seed = 0;
 
@@ -77,6 +77,8 @@ public class CameraManager : MonoBehaviour {
         seed+=1;
 
         shake *= shakedropoffPerFrame;
+        if (shake < 0.001f)
+            shake = 0;
     }
 
     public void Shake()
