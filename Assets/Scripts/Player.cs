@@ -134,7 +134,7 @@ public class Player : MonoBehaviour {
 
     public void Dash(Vector2 dir)
     {
-        if (physics.grounded && !falling)
+        if (physics.grounded && !falling && Manager.instance.controllPlayer)
         {
             //Change Facing Direction
             facing = (dir.x < 0);
@@ -150,7 +150,7 @@ public class Player : MonoBehaviour {
 
     public void Jump()
     {
-        if (physics.grounded)
+        if (physics.grounded && Manager.instance.controllPlayer)
         {
             //Animation
 
