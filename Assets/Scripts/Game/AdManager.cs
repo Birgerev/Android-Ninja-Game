@@ -28,8 +28,9 @@ public class AdManager : MonoBehaviour
         try { 
             Vungle.playAd(placements[0]);
 
-            Vungle.onAdFinishedEvent += (placementID, adPlayable) => {
-                HandleOnAdRewarded();
+            Vungle.onAdFinishedEvent += (placementID, args) => {
+                if(args.IsCompletedView)
+                    HandleOnAdRewarded();
             };
         }
         catch (System.Exception e)
