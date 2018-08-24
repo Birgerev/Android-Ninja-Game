@@ -30,6 +30,8 @@ public class Manager : MonoBehaviour {
     public bool controllPlayer = false;
     public bool resetStats = false;
 
+    bool offeredAd = false;
+
     public static Manager instance;
 
     // Use this for initialization
@@ -87,9 +89,11 @@ public class Manager : MonoBehaviour {
         Manager.instance.controllPlayer = false;
         spawnEnemies = false;
         //Will Throw An Error On PC        
-        if (Manager.instance.score > 20)
+        if (Manager.instance.score > 20 && !offeredAd)
         {
+            offeredAd = true;
             UI.Respawn();
+
             return;
         }
 
@@ -101,7 +105,8 @@ public class Manager : MonoBehaviour {
         score = 0;
         
         Instantiate(PlayerPrefab);
-        
+        offeredAd = false;
+
         KillEnemies();
     }
 

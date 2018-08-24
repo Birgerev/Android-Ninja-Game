@@ -10898,7 +10898,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1789016426}
   - component: {fileID: 1789016425}
-  - component: {fileID: 1789016427}
   - component: {fileID: 1789016428}
   - component: {fileID: 1789016429}
   - component: {fileID: 1789016430}
@@ -10948,17 +10947,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1789016427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1789016424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7f78f6e45698a479c334be2d803a8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1789016428
 MonoBehaviour:
   m_ObjectHideFlags: 0
